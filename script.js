@@ -1,19 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Hero glow follow mouse
-    const hero = document.getElementById('hero');
-    const heroGlow = document.querySelector('.hero-glow');
-    
-    if (hero && heroGlow) {
-        hero.addEventListener('mousemove', (e) => {
-            const rect = hero.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            heroGlow.style.setProperty('--glow-x', `${x}px`);
-            heroGlow.style.setProperty('--glow-y', `${y}px`);
-        });
-    }
-
     // Role tabs functionality
     const roleTabs = document.querySelectorAll('.role-tab');
     const navRoleBtns = document.querySelectorAll('.nav-role-btn');
@@ -503,87 +489,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Waitlist button handler - primary button
-    const btnPrimary = document.querySelector('.btn-primary');
-    const emailInput = document.querySelector('.email-input');
-    const microConsent = document.querySelector('.micro-consent');
-
-    if (btnPrimary && emailInput) {
-        const handleWaitlistSubmit = async () => {
-            const email = emailInput.value.trim();
+    // New waitlist form handler
+    const waitlistForm = document.querySelector('.waitlist-form');
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const nameInput = waitlistForm.querySelector('input[type="text"]');
+            const emailInput = waitlistForm.querySelector('input[type="email"]');
+            const submitBtn = waitlistForm.querySelector('.submit-btn');
+            const name = nameInput?.value.trim() || '';
+            const email = emailInput?.value.trim() || '';
             const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
 
             // Reset UI state
-            emailInput.classList.remove('error', 'success');
-            btnPrimary.disabled = false;
-            btnPrimary.textContent = 'Secure Elite Access →';
-            if (microConsent) microConsent.textContent = '100% Vetted Ecosystem. Zero Vanity Noise. Coming to revolutionize the Indian startup landscape in Q3 2026.';
-            if (microConsent) microConsent.style.color = '';
+            nameInput?.classList.remove('error', 'success');
+            emailInput?.classList.remove('error', 'success');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('processing', 'success');
+            submitBtn.innerHTML = 'JOIN THE WAITLIST <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
 
             if (!email) {
-                emailInput.classList.add('error');
-                microConsent.textContent = 'Please enter your professional email address.';
-                microConsent.style.color = '#ef4444';
+                emailInput?.classList.add('error');
                 return;
             }
 
             if (!emailRegex.test(email)) {
-                emailInput.classList.add('error');
-                microConsent.textContent = 'Please enter a valid professional email address.';
-                microConsent.style.color = '#ef4444';
+                emailInput?.classList.add('error');
                 return;
             }
 
             // Check for disposable email domain
             const domain = email.split('@')[1].toLowerCase();
             if (disposableEmailDomains.includes(domain)) {
-                emailInput.classList.add('error');
-                microConsent.textContent = 'Disposable/temporary emails are not allowed. Please use your real professional email address.';
-                microConsent.style.color = '#ef4444';
+                emailInput?.classList.add('error');
                 return;
             }
 
             // Show loading state
-            btnPrimary.disabled = true;
-            btnPrimary.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('processing');
+            submitBtn.innerHTML = 'PROCESSING...';
 
             try {
                 // Save to local storage
                 saveToWaitlist(email, selectedRole);
                 
-                // Simulate API call (replace with actual Google Sheets webhook later)
+                // Simulate API call
                 await new Promise(resolve => setTimeout(resolve, 1500));
 
                 // Success!
-                emailInput.classList.add('success');
+                submitBtn.classList.remove('processing');
+                submitBtn.classList.add('success');
+                emailInput?.classList.add('success');
+                nameInput?.classList.add('success');
                 emailInput.value = '';
-                btnPrimary.textContent = 'Success!';
-                microConsent.textContent = `Thank you! We'll be in touch with you at ${email} soon.`;
-                microConsent.style.color = '#22c55e';
+                nameInput.value = '';
+                submitBtn.innerHTML = 'SUCCESS!';
 
                 // Reset after 5 seconds
                 setTimeout(() => {
-                    emailInput.classList.remove('success');
-                    btnPrimary.textContent = 'Secure Elite Access →';
-                    btnPrimary.disabled = false;
-                    microConsent.textContent = '100% Vetted Ecosystem. Zero Vanity Noise. Coming to revolutionize the Indian startup landscape in Q3 2026.';
-                    microConsent.style.color = '';
+                    nameInput?.classList.remove('success');
+                    emailInput?.classList.remove('success');
+                    submitBtn.classList.remove('success');
+                    submitBtn.innerHTML = 'JOIN THE WAITLIST <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+                    submitBtn.disabled = false;
                 }, 5000);
 
             } catch (error) {
                 // Error handling
-                emailInput.classList.add('error');
-                microConsent.textContent = 'Something went wrong. Please try again later.';
-                microConsent.style.color = '#ef4444';
-                btnPrimary.textContent = 'Secure Elite Access →';
-                btnPrimary.disabled = false;
-            }
-        };
-
-        btnPrimary.addEventListener('click', handleWaitlistSubmit);
-        emailInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                handleWaitlistSubmit();
+                submitBtn.classList.remove('processing');
+                emailInput?.classList.add('error');
+                submitBtn.innerHTML = 'JOIN THE WAITLIST <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+                submitBtn.disabled = false;
             }
         });
     }
