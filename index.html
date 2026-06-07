@@ -170,292 +170,720 @@
     </section>
 
     <!-- For All Section -->
-    <section id="for-all" class="for-all-section">
+    <section id="for-all" class="for-all-section scroll-animate">
         <div class="container">
-            <div class="for-all-layout">
-                <div class="for-all-left">
-                    <div class="for-all-label">
-                        <span class="for-all-pill">// FOVNDX IS FOR ALL</span>
-                    </div>
-                    <h2 class="for-all-heading">
-                        If you prove it, you belong here.
-                    </h2>
-                    <p class="for-all-description">
-                        Pitch decks are manufactured noise. fovndX extracts signal directly from your actual execution. Choose your path to see the engine in action:
-                    </p>
-                    
-                    <div class="path-list">
-                        <div class="path-item">
-                            <span class="path-arrow">›</span>
-                            <div class="path-text">
-                                <div class="path-title">FOR FOUNDERS</div>
-                                <div class="path-subtitle">BUILDS YOUR EXECUTION GRAPH FROM REAL COMMITS & MILESTONES</div>
-                            </div>
-                        </div>
-                        
-                        <div class="path-item">
-                            <span class="path-arrow">›</span>
-                            <div class="path-text">
-                                <div class="path-title">FOR INVESTORS</div>
-                                <div class="path-subtitle">FILTERS DEAL FLOW BY GRIT SCORE — NOT GUT FEEL</div>
-                            </div>
-                        </div>
-                        
-                        <div class="path-item">
-                            <span class="path-arrow">›</span>
-                            <div class="path-text">
-                                <div class="path-title">FOR BUILDERS</div>
-                                <div class="path-subtitle">CONVERTS YOUR GITHUB HISTORY INTO VERIFIED REPUTATION</div>
-                            </div>
-                        </div>
-                        
-                        <div class="path-item">
-                            <span class="path-arrow">›</span>
-                            <div class="path-text">
-                                <div class="path-title">FOR MENTORS</div>
-                                <div class="path-subtitle">QUANTIFIES YOUR LEGACY THROUGH EVERY STARTUP YOU HELP WIN</div>
-                            </div>
-                        </div>
-                    </div>
+            <style>
+                :root {
+                    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
+                    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+                    --font-serif: 'Georgia', serif;
+                    --color-background-primary: #000000;
+                    --color-background-secondary: #050505;
+                    --color-border-primary: rgba(148, 163, 184, 0.2);
+                    --color-border-secondary: rgba(148, 163, 184, 0.1);
+                    --color-border-tertiary: rgba(148, 163, 184, 0.08);
+                    --color-text-primary: #f9fafb;
+                    --color-text-secondary: #9ca3af;
+                    --color-text-tertiary: #6b7280;
+                    --color-text-success: #00c97a;
+                    --border-radius-md: 8px;
+                    --border-radius-lg: 16px;
+                }
+                *{box-sizing:border-box;margin:0;padding:0}
+                .for-all-section {
+                    background: #000000 !important;
+                }
+                .wrap{padding:1.5rem 0;font-family:var(--font-sans)}
+                .top-label{font-size:24px;font-weight:700;color:var(--color-text-success);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;font-family:var(--font-mono)}
+                .headline{font-size:42px;font-weight:700;color:var(--color-text-primary);margin-bottom:.35rem;line-height:1.2}
+                .sub{font-size:14px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6;max-width:520px}
+                .role-tabs{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
+                .rtab{font-size:12px;font-weight:500;padding:.45rem 1rem;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s;font-family:var(--font-mono);letter-spacing:.04em}
+                .rtab:hover{color:var(--color-text-primary);border-color:var(--color-border-primary)}
+                .rtab.on{background:var(--color-background-primary);border-color:var(--color-border-primary);color:var(--color-text-primary);border-width:0.5px}
+                .content-area{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+                .left-panel{}
+                .role-num{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);letter-spacing:.08em;margin-bottom:.75rem}
+                .role-big{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:.5rem;line-height:1.2}
+                .role-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.65;margin-bottom:1.25rem}
+                .point-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.5rem}
+                .point{border-top:.5px solid var(--color-border-tertiary);padding-top:.85rem}
+                .p-num{font-family:var(--font-mono);font-size:11px;color:var(--color-text-success);font-weight:500;margin-bottom:.2rem}
+                .p-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:.2rem}
+                .p-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.55}
+                .cta-btn{font-family:var(--font-mono);font-size:12px;font-weight:500;border:.5px solid var(--color-border-primary);border-radius:var(--border-radius-md);padding:.6rem 1.25rem;background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;letter-spacing:.03em;transition:all .15s;display:inline-block;text-decoration:none}
+                .cta-btn:hover{background:var(--color-background-secondary)}
+
+                .terminal-box{background:var(--color-background-primary);border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow:hidden}
+                .t-bar{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;border-bottom:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+                .t-dots{display:flex;gap:5px}
+                .t-dot{width:9px;height:9px;border-radius:50%}
+                .d-r{background:#ff5f57}.d-y{background:#febc2e}.d-g{background:#28c840}
+                .t-title{font-family:var(--font-mono);font-size:10px;color:var(--color-text-tertiary);letter-spacing:.06em}
+                .t-body{padding:1rem;font-family:var(--font-mono);font-size:11px;line-height:1.8;min-height:220px;position:relative}
+                .t-line{color:var(--color-text-secondary);display:block;opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s ease}
+                .t-line.show{opacity:1;transform:none}
+                .t-cmd{color:var(--color-text-primary)}
+                .t-green{color:var(--color-text-success);font-weight:500}
+                .t-muted{color:var(--color-text-tertiary)}
+                .t-label{color:var(--color-text-secondary)}
+                .t-val{color:var(--color-text-primary)}
+                .t-check{color:var(--color-text-success)}
+                .t-footer{padding:.55rem 1rem;border-top:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);font-family:var(--font-mono);font-size:10px;color:var(--color-text-tertiary);display:flex;align-items:center;gap:.5rem}
+                .status-dot{width:5px;height:5px;border-radius:50%;background:var(--color-text-success);animation:blink 1.5s infinite}
+                @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+                @media(max-width:600px){.content-area{grid-template-columns:1fr}}
+            </style>
+
+            <div class="wrap">
+                <div class="top-label">// fovndX is for all</div>
+                <div class="headline">If you <span style="color: #dc2626; font-weight: 800;">prove</span> it, you <span style="color: #00c97a; font-weight: 800;">belong</span> here.</div>
+                <p class="sub">Pitch decks are manufactured noise. fovndX extracts signal directly from your actual execution. Choose your path:</p>
+
+                <div class="role-tabs">
+                    <button class="rtab on" onclick="switchRole('founder',this)">FOR FOUNDERS</button>
+                    <button class="rtab" onclick="switchRole('investor',this)">FOR INVESTORS</button>
+                    <button class="rtab" onclick="switchRole('builder',this)">FOR BUILDERS</button>
+                    <button class="rtab" onclick="switchRole('mentor',this)">FOR MENTORS</button>
                 </div>
-                
-                <div class="for-all-right">
-                    <div class="demo-card">
-                        <div class="demo-header">
-                            <div class="demo-dots">
-                                <span class="demo-dot"></span>
-                                <span class="demo-dot"></span>
-                                <span class="demo-dot"></span>
-                            </div>
-                            <div class="demo-title">FOVNDX — CLAIM-ACCESS-V2</div>
+
+                <div class="content-area">
+                    <div class="left-panel" id="leftPanel"></div>
+                    <div class="terminal-box">
+                        <div class="t-bar">
+                            <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                            <div class="t-title" id="tTitle">FOVNDX ~ EXECUTION-GRAPH-LIVE</div>
+                            <div></div>
                         </div>
-                        <div class="demo-content">
-                            <div class="demo-heading">// JOIN THE MERITOCRACY</div>
-                            <div class="demo-text">
-                                NO MATTER WHAT YOU BUILD, SKIP THE<br>
-                                RESUME PILE. CLAIM YOUR UNIQUE ACCESS<br>
-                                SPOT ON FOVNDX.
-                            </div>
-                            <a href="#" class="demo-btn">
-                                FOVNDX: [CLAIM SPOT] →
-                            </a>
-                            <div class="demo-footer">
-                                AUTOFILLS EMAIL • GENERATES UNIQUE CREDENTIALS
-                            </div>
-                        </div>
+                        <div class="t-body" id="tBody"></div>
+                        <div class="t-footer"><div class="status-dot"></div><span id="tStatus">MONITORING ACTIVE</span></div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                const roles = {
+                    founder: {
+                        num: '// ROLE 01',
+                        title: 'Build in public.\nGet funded.',
+                        desc: 'Your execution graph is your fundraising tool. It builds automatically while you work. Investors find you — no cold emails, no middlemen.',
+                        points: [
+                            { n: '[01]', t: 'Execution Graph', d: 'Every commit, milestone, and revenue event auto-builds your verified journey. Tamper-proof. Chronological. Shareable.' },
+                            { n: '[02]', t: 'Grit Score', d: 'An AI metric that reads what you actually built. The higher it goes, the more visible you become to verified investors.' },
+                            { n: '[03]', t: 'Idea Vault', d: 'Show the world your problem. Lock your solution. One-click NDA before anyone sees the real IP.' }
+                        ],
+                        cta: 'fovndX: [CLAIM FOUNDER SPOT] →',
+                        tTitle: 'FOVNDX ~ EXECUTION-GRAPH-LIVE',
+                        tStatus: 'EXECUTION GRAPH BUILDING · GRIT SCORE LIVE',
+                        lines: [
+                            { cls: 't-cmd', text: '$ fovndx init --startup "AI Invoice SaaS"' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-label', text: '[GRAPH] IDEA ANCHORED → POLYGON HASH: 7EF4A1C' },
+                            { cls: 't-label', text: '[GRAPH] CO-FOUNDER JOINED → PRIYA MEHTA · CTO' },
+                            { cls: 't-label', text: '[GRAPH] COMMITS THIS WEEK → 247 (+12%)' },
+                            { cls: 't-label', text: '[GRAPH] MILESTONE VERIFIED → MVP LIVE' },
+                            { cls: 't-label', text: '[GRAPH] REVENUE DETECTED → ₹18,000 MRR' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-green', text: '✓ GRIT SCORE: 84. INVESTOR FEED: ACTIVE.' },
+                        ]
+                    },
+                    investor: {
+                        num: '// ROLE 02',
+                        title: 'Better deals.\nZero noise.',
+                        desc: 'Filter by Grit Score. Review verified execution data before a single call. Due diligence in hours, not months.',
+                        points: [
+                            { n: '[01]', t: 'Grit Score filter', d: 'Set your minimum Grit Score. Only see founders who are actually building — not just pitching.' },
+                            { n: '[02]', t: 'Execution Graph DD', d: 'Every startup\'s complete verified journey is one click away. Commits, milestones, revenue — all real, all timestamped.' },
+                            { n: '[03]', t: '1-click NDA access', d: 'Request deep access instantly. Digital NDA signed, vault unlocked, financials visible — in seconds.' }
+                        ],
+                        cta: 'fovndX: [ACCESS DEAL FLOW] →',
+                        tTitle: 'FOVNDX ~ DEAL-FILTER-ENGINE',
+                        tStatus: 'DEAL FLOW MONITORING · ENCRYPTED',
+                        lines: [
+                            { cls: 't-cmd', text: '$ fovndx filter --grit-min 80 --stage MVP' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-label', text: 'SCANNING VERIFIED STARTUP POOL...' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-val', text: '[MATCH] Rahul Sharma    · Grit 84 · FinTech SaaS' },
+                            { cls: 't-val', text: '[MATCH] Sneha Patil     · Grit 91 · HealthAI' },
+                            { cls: 't-val', text: '[MATCH] Arjun Nair      · Grit 87 · EdTech B2B' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-green', text: '✓ 3 VERIFIED MATCHES. NO COLD EMAILS NEEDED.' },
+                        ]
+                    },
+                    builder: {
+                        num: '// ROLE 03',
+                        title: 'Your work\nis your CV.',
+                        desc: 'GitHub commits, completed gigs, witnessed contributions — all build your Grit Score. The best builders get the best opportunities.',
+                        points: [
+                            { n: '[01]', t: 'Proof of work parser', d: 'fovndX reads your GitHub history and converts real commits into verified reputation. No resume needed.' },
+                            { n: '[02]', t: 'Merit-based gig access', d: 'High Grit Score unlocks premium gigs from verified startups. Better score, better work, better pay.' },
+                            { n: '[03]', t: 'Portable reputation', d: 'One URL. Every commit. Every completed gig. Witnessed forever. Share anywhere, own it always.' }
+                        ],
+                        cta: 'fovndX: [CLAIM BUILDER SPOT] →',
+                        tTitle: 'FOVNDX ~ PROOF-OF-WORK-PARSER',
+                        tStatus: 'PARSING GITHUB HISTORY · LIVE',
+                        lines: [
+                            { cls: 't-cmd', text: '$ fovndx parse --github @yourhandle' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-label', text: 'COMMITS STREAK    → 47 days continuous' },
+                            { cls: 't-label', text: 'REPOS CONTRIBUTED → 12 verified' },
+                            { cls: 't-label', text: 'GIGS COMPLETED    → 8 · rating 4.9/5' },
+                            { cls: 't-label', text: 'WITNESS EVENTS    → 3 · weight ×3' },
+                            { cls: 't-label', text: 'GRIT SCORE        → 79 → 83 ↑' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-green', text: '✓ PROOF PARSED. PREMIUM GIGS UNLOCKED.' },
+                        ]
+                    },
+                    mentor: {
+                        num: '// ROLE 04',
+                        title: 'Your legacy,\nquantified.',
+                        desc: 'Every startup you help succeed raises your Authority Score. Advisory equity lets your expertise compound into real financial upside.',
+                        points: [
+                            { n: '[01]', t: 'Authority Score', d: 'Every witnessed milestone and mentee success permanently raises your Authority Score. Your impact, on record.' },
+                            { n: '[02]', t: 'AI-matched founders', d: 'No cold inbound. fovndX matches you with founders who need exactly your industry and stage expertise.' },
+                            { n: '[03]', t: 'Advisory equity engine', d: 'Standard advisory equity agreements, vesting schedules, and cap table basics — built in, legally templated.' }
+                        ],
+                        cta: 'fovndX: [CLAIM MENTOR SPOT] →',
+                        tTitle: 'FOVNDX ~ AUTHORITY-SCORE-ENGINE',
+                        tStatus: 'AUTHORITY SCORE COMPOUNDING · LIVE',
+                        lines: [
+                            { cls: 't-cmd', text: '$ fovndx mentor --profile @your-handle' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-label', text: 'STARTUPS MENTORED    → 12 verified' },
+                            { cls: 't-label', text: 'MILESTONES WITNESSED → 34 anchored' },
+                            { cls: 't-label', text: 'FUNDING FACILITATED  → ₹2.4Cr' },
+                            { cls: 't-label', text: 'ADVISORY EQUITY HELD → 3 companies' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-val', text: 'AUTHORITY SCORE → 91 / 100' },
+                            { cls: 't-muted', text: '' },
+                            { cls: 't-green', text: '✓ LEGACY QUANTIFIED. FOUNDERS INCOMING.' },
+                        ]
+                    }
+                };
+
+                function buildLeft(r) {
+                    const d = roles[r];
+                    return `
+                        <div class="role-num">${d.num}</div>
+                        <div class="role-big">${d.title.replace('\n','<br>')}</div>
+                        <div class="role-desc">${d.desc}</div>
+                        <div class="point-list">${d.points.map(p=>`
+                            <div class="point">
+                                <div class="p-num">${p.n}</div>
+                                <div class="p-title">${p.t}</div>
+                                <div class="p-desc">${p.d}</div>
+                            </div>`).join('')}
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrwDmT7ADW0hNwKk0fHFYaaN4RCf4Vatu7eyeGnV5HH7CukA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="cta-btn">${d.cta}</a>
+                    `;
+                }
+
+                function buildTerminal(r) {
+                    const d = roles[r];
+                    document.getElementById('tTitle').textContent = d.tTitle;
+                    document.getElementById('tStatus').textContent = d.tStatus;
+                    const body = document.getElementById('tBody');
+                    body.innerHTML = d.lines.map((l,i)=>
+                        `<span class="t-line ${l.cls}" id="tl${i}">${l.text || '&nbsp;'}</span>`
+                    ).join('');
+                    d.lines.forEach((_,i)=>{
+                        setTimeout(()=>{
+                            const el = document.getElementById('tl'+i);
+                            if(el) el.classList.add('show');
+                        }, i * 120);
+                    });
+                }
+
+                function switchRole(r, btn) {
+                    document.querySelectorAll('.rtab').forEach(b=>b.classList.remove('on'));
+                    btn.classList.add('on');
+                    document.getElementById('leftPanel').innerHTML = buildLeft(r);
+                    buildTerminal(r);
+                }
+
+                document.getElementById('leftPanel').innerHTML = buildLeft('founder');
+                buildTerminal('founder');
+            </script>
         </div>
     </section>
 
-    <!-- Infrastructure Shift - The Brutal Roast -->
+    <!-- Infrastructure Shift - Terminal Version -->
     <section id="manifesto" class="infrastructure-shift scroll-animate">
         <div class="container">
-            <div class="shift-content">
-                <div class="shift-left scroll-animate scroll-animate-left">
-                    <p class="eyebrow">// THE REALITY CHECK</p>
-                    <h2 class="shift-heading">"Startups need Capital and Code. Not a '<span class="flock-red">Flock</span>' to huddle with."</h2>
-                    <div class="roast-body">
-                        <p>
-                            The Indian startup ecosystem is exhausted by generic networking directories, chaotic group chats, and amateur '<span style="color: #dc2626;">crowded flocks</span>' that offer nothing but noise and high exposure to idea theft.
-                        </p>
-                        <p>
-                            Units of progress in the real business world are measured in immutable GitHub commits, verified Figma deployment cycles, and live revenue metrics—not in vanity member counts or social huddles.
-                        </p>
-                        <p>
-                            While copycats try to build numbers by assembling crowds into unvetted public lists, FovndX replaces passive community directories with an automated, data-driven Startup Operating System. We don't create chatrooms for people to talk about building; we build the cryptographic and financial infrastructure that protects your IP and automates your dealflow.
-                        </p>
-                        <p class="roast-closing">
-                            <strong>WE ARE HERE TO REVOLUTIONIZE THE STARTUP ECOSYSTEM. CHOOSE YOUR INFRASTRUCTURE WISELY.</strong>
-                        </p>
+            <style>
+                :root {
+                    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
+                    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+                    --color-background-primary: #000000;
+                    --color-background-secondary: #050505;
+                    --color-border-primary: rgba(148, 163, 184, 0.2);
+                    --color-border-secondary: rgba(148, 163, 184, 0.1);
+                    --color-text-primary: #f9fafb;
+                    --color-text-secondary: #9ca3af;
+                    --color-text-tertiary: #6b7280;
+                    --color-text-success: #00c97a;
+                    --color-text-danger: #dc2626;
+                    --border-radius-md: 8px;
+                    --border-radius-lg: 16px;
+                }
+                .infrastructure-shift {
+                    background: #000000 !important;
+                }
+                .terminal-wrap {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    align-items: start;
+                }
+                .terminal-box {
+                    background: var(--color-background-primary);
+                    border: .5px solid var(--color-border-secondary);
+                    border-radius: var(--border-radius-lg);
+                    overflow: hidden;
+                }
+                .t-bar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: .55rem 1rem;
+                    border-bottom: .5px solid var(--color-border-tertiary);
+                    background: var(--color-background-secondary);
+                }
+                .t-dots {
+                    display: flex;
+                    gap: 5px;
+                }
+                .t-dot {
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                }
+                .d-r { background: #ff5f57; }
+                .d-y { background: #febc2e; }
+                .d-g { background: #28c840; }
+                .t-title {
+                    font-family: var(--font-mono);
+                    font-size: 10px;
+                    color: var(--color-text-tertiary);
+                    letter-spacing: .06em;
+                }
+                .t-body {
+                    padding: 1rem;
+                    font-family: var(--font-mono);
+                    font-size: 11px;
+                    line-height: 1.8;
+                    min-height: 350px;
+                    position: relative;
+                }
+                .t-line {
+                    color: var(--color-text-secondary);
+                    display: block;
+                    opacity: 0;
+                    transform: translateY(4px);
+                    transition: opacity .25s ease, transform .25s ease;
+                }
+                .t-line.show {
+                    opacity: 1;
+                    transform: none;
+                }
+                .t-cmd {
+                    color: var(--color-text-primary);
+                }
+                .t-green {
+                    color: var(--color-text-success);
+                    font-weight: 500;
+                }
+                .t-red {
+                    color: var(--color-text-danger);
+                    font-weight: 500;
+                }
+                .t-muted {
+                    color: var(--color-text-tertiary);
+                }
+                .t-label {
+                    color: var(--color-text-secondary);
+                }
+                .t-val {
+                    color: var(--color-text-primary);
+                }
+                .t-check {
+                    color: var(--color-text-success);
+                }
+                .t-footer {
+                    padding: .55rem 1rem;
+                    border-top: .5px solid var(--color-border-tertiary);
+                    background: var(--color-background-secondary);
+                    font-family: var(--font-mono);
+                    font-size: 10px;
+                    color: var(--color-text-tertiary);
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                }
+                .status-dot {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: var(--color-text-success);
+                    animation: blink 1.5s infinite;
+                }
+                @keyframes blink {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: .3; }
+                }
+                .manifesto-text {
+                    font-family: var(--font-sans);
+                }
+                .manifesto-label {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: var(--color-text-success);
+                    letter-spacing: .1em;
+                    text-transform: uppercase;
+                    margin-bottom: .5rem;
+                    font-family: var(--font-mono);
+                }
+                .manifesto-heading {
+                    font-size: 32px;
+                    font-weight: 800;
+                    color: var(--color-text-primary);
+                    margin-bottom: 1.5rem;
+                    line-height: 1.2;
+                }
+                .manifesto-heading .flock-red {
+                    color: #dc2626;
+                }
+                .manifesto-subheading {
+                    font-size: 12px;
+                    color: var(--color-text-secondary);
+                    margin-bottom: 1rem;
+                    font-family: var(--font-mono);
+                    letter-spacing: 0.02em;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                .subheading-logo {
+                    height: 20px;
+                    width: auto;
+                    display: inline-block;
+                }
+                .manifesto-tagline {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: var(--color-text-primary);
+                    margin-bottom: 1.5rem;
+                    line-height: 1.3;
+                }
+                .manifesto-body {
+                    color: var(--color-text-secondary);
+                    font-size: 15px;
+                    line-height: 1.8;
+                    margin-bottom: 1.5rem;
+                }
+                .manifesto-body p {
+                    margin-bottom: 1rem;
+                }
+                .manifesto-body strong {
+                    color: var(--color-text-primary);
+                }
+                .manifesto-closing {
+                    color: var(--color-text-primary);
+                    font-weight: 700;
+                    font-size: 16px;
+                    padding-top: 1rem;
+                    border-top: 1px solid var(--color-border-secondary);
+                }
+                @media (max-width: 900px) {
+                    .terminal-wrap {
+                        grid-template-columns: 1fr;
+                    }
+                    .manifesto-heading {
+                        font-size: 24px;
+                    }
+                }
+            </style>
+            
+            <div class="terminal-wrap">
+                <div class="manifesto-text">
+                    <div class="manifesto-label">// THE REALITY CHECK</div>
+                    <div class="manifesto-heading">"Startups need Capital and Code. Not a '<span class="flock-red">Flock</span>' to huddle with."</div>
+                    <div class="manifesto-subheading"><img src="fovndx-logo.png" alt="fovndX Logo" class="subheading-logo"> — The world's first verified execution record.</div>
+                    <div class="manifesto-tagline">The world remembers builders who can prove they built.</div>
+                    <div class="manifesto-body">
+                        <p>The Indian startup ecosystem is exhausted by generic networking directories, chaotic group chats, and amateur '<strong style="color: #dc2626;">crowded flocks</strong>' that offer nothing but noise and high exposure to idea theft.</p>
+                        <p>Units of progress in the real business world are measured in immutable GitHub commits, verified Figma deployment cycles, and live revenue metrics—not in vanity member counts or social huddles.</p>
+                        <p>While copycats try to build numbers by assembling crowds into unvetted public lists, FovndX replaces passive community directories with an automated, data-driven Startup Operating System. We don't create chatrooms for people to talk about building; we build the cryptographic and financial infrastructure that protects your IP and automates your dealflow.</p>
+                    </div>
+                    <div class="manifesto-closing">
+                        WE ARE HERE TO REVOLUTIONIZE THE STARTUP ECOSYSTEM. CHOOSE YOUR INFRASTRUCTURE WISELY.
                     </div>
                 </div>
-                <div class="shift-right scroll-animate scroll-animate-right">
-                    <div class="comparison-card">
-                        <div class="comparison-header">
-                            <span class="comparison-badge">OLD WAY</span>
-                            <span class="comparison-badge badge-fovndx">FOVNDX</span>
-                        </div>
-                        <div class="comparison-item">
-                            <div class="comparison-left-item">
-                                <span class="comparison-icon icon-bad">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 11C17.6569 11 19 9.65685 19 8C19 6.34315 17.6569 5 16 5C14.3431 5 13 6.34315 13 8C13 9.65685 14.3431 11 16 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 11C9.65685 11 11 9.65685 11 8C11 6.34315 9.65685 5 8 5C6.34315 5 5 6.34315 5 8C5 9.65685 6.34315 11 8 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 13C5.79086 13 4 14.7909 4 17V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16 13C18.2091 13 20 14.7909 20 17V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="comparison-text">Crowded <span style="color: #ffffff; font-weight: 700;">Flocks</span></span>
-                            </div>
-                            <div class="comparison-arrow">→</div>
-                            <div class="comparison-right-item">
-                                <span class="comparison-icon icon-good">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="comparison-text">Verified Execution</span>
-                            </div>
-                        </div>
-                        <div class="comparison-item">
-                            <div class="comparison-left-item">
-                                <span class="comparison-icon icon-bad">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7 8H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7 16H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M3 8H3.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M3 12H3.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M3 16H3.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="comparison-text">Chaotic Chats</span>
-                            </div>
-                            <div class="comparison-arrow">→</div>
-                            <div class="comparison-right-item">
-                                <span class="comparison-icon icon-good">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 15V11" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 11L9 13.5" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 11L15 13.5" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="comparison-text">IP Protection</span>
-                            </div>
-                        </div>
-                        <div class="comparison-item">
-                            <div class="comparison-left-item">
-                                <span class="comparison-icon icon-bad">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 19V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M4 19H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 17V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16 17V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="comparison-text">Vanity Numbers</span>
-                            </div>
-                            <div class="comparison-arrow">→</div>
-                            <div class="comparison-right-item">
-                                <span class="comparison-icon icon-good">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 19V5" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M4 19H20" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M8 17V9" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 17V5" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M16 17V11" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <span class="comparison-text">Live Metrics</span>
-                            </div>
-                        </div>
-                        <div class="comparison-stats">
-                            <div class="stat-card scroll-animate scroll-animate-scale">
-                                <div class="stat-icon">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L22 7V17L12 22L2 17V7L12 2Z" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="stat-label">Immutable</div>
-                            </div>
-                            <div class="stat-card scroll-animate scroll-animate-scale">
-                                <div class="stat-icon">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M9 12L11 14L15 10" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="stat-label">Secure</div>
-                            </div>
-                            <div class="stat-card scroll-animate scroll-animate-scale">
-                                <div class="stat-icon">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 1V4" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 20V23" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M4.22 4.22L6.34 6.34" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M17.66 17.66L19.78 19.78" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M1 12H4" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M20 12H23" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M4.22 19.78L6.34 17.66" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M17.66 6.34L19.78 4.22" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="stat-label">Automated</div>
-                            </div>
-                        </div>
+                
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ INFRASTRUCTURE-SHIFT</div>
+                        <div></div>
                     </div>
+                    <div class="t-body" id="infraTerminal">
+                        <span class="t-line" id="infra-l-0">$ fovndx audit --old-way</span>
+                        <span class="t-line" id="infra-l-1">&nbsp;</span>
+                        <span class="t-line" id="infra-l-2">▶ Scanning old ecosystem...</span>
+                        <span class="t-line" id="infra-l-3">&nbsp;</span>
+                        <span class="t-line" id="infra-l-4"><span class="t-red">❌</span> Crowded Flocks → High noise, IP exposure</span>
+                        <span class="t-line" id="infra-l-5"><span class="t-red">❌</span> Chaotic Chats → Unstructured communication</span>
+                        <span class="t-line" id="infra-l-6"><span class="t-red">❌</span> Vanity Numbers → No real progress metrics</span>
+                        <span class="t-line" id="infra-l-7">&nbsp;</span>
+                        <span class="t-line" id="infra-l-8">$ fovndx upgrade --to fovndx</span>
+                        <span class="t-line" id="infra-l-9">&nbsp;</span>
+                        <span class="t-line" id="infra-l-10">▶ Upgrading infrastructure...</span>
+                        <span class="t-line" id="infra-l-11">&nbsp;</span>
+                        <span class="t-line" id="infra-l-12"><span class="t-green">✓</span> Crowded Flocks → <span class="t-val">Verified Execution</span></span>
+                        <span class="t-line" id="infra-l-13"><span class="t-green">✓</span> Chaotic Chats → <span class="t-val">IP Protection</span></span>
+                        <span class="t-line" id="infra-l-14"><span class="t-green">✓</span> Vanity Numbers → <span class="t-val">Live Metrics</span></span>
+                        <span class="t-line" id="infra-l-15">&nbsp;</span>
+                        <span class="t-line" id="infra-l-16">▶ Verifying new infrastructure...</span>
+                        <span class="t-line" id="infra-l-17">&nbsp;</span>
+                        <span class="t-line" id="infra-l-18"><span class="t-green">✓</span> Immutable</span>
+                        <span class="t-line" id="infra-l-19"><span class="t-green">✓</span> Secure</span>
+                        <span class="t-line" id="infra-l-20"><span class="t-green">✓</span> Automated</span>
+                        <span class="t-line" id="infra-l-21">&nbsp;</span>
+                        <span class="t-line" id="infra-l-22"><span class="t-green">✓ SUCCESS: INFRASTRUCTURE SHIFT COMPLETE</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="infraStatus">OPTIMIZING EXECUTION</span></div>
                 </div>
             </div>
+            
+            <script>
+                function animateInfraTerminal() {
+                    for (let i = 0; i <= 22; i++) {
+                        setTimeout(() => {
+                            const el = document.getElementById('infra-l-' + i);
+                            if (el) el.classList.add('show');
+                        }, i * 120);
+                    }
+                }
+                animateInfraTerminal();
+            </script>
         </div>
     </section>
 
     <!-- Founder's Note -->
     <section class="founders-note scroll-animate">
         <div class="container">
-            <div class="note-content">
-                <div class="founders-grid">
-                    <div class="founder-left scroll-animate scroll-animate-left">
-                        <div class="founder-badge">Founder's Note</div>
-                        <h2 class="section-title">Built by a Founder, For the Founders.</h2>
-                        
-                        <div class="quote-container">
-                            <div class="quote-marks">"</div>
-                            
-                            <div class="quote-content">
-                                <p class="quote-line">I have witnessed immense execution die prematurely because early-stage creators lacked the right security, structure, or signal.</p>
-                                <p class="quote-line highlight">FovndX was born out of that exact structural failure.</p>
-                                <p class="quote-line">We are not here to build another loose directory or a temporary network to aggregate crowds.</p>
-                                <p class="quote-line">We are building the definitive operating terminal for the next generation of global tech architects.</p>
-                            </div>
-                            
-                            <div class="quote-footer">
-                                <div class="founder-info">
-                                    <div class="founder-avatar">RC</div>
-                                    <div class="founder-details">
-                                        <div class="founder-name">Rohan Chavhan</div>
-                                        <div class="founder-title">Founder & CEO, FovndX</div>
-                                    </div>
-                                </div>
+            <h1 class="section-main-heading">Built by a Founder, For the Founders.</h1>
+            <style>
+                :root {
+                    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
+                    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+                    --font-serif: 'Georgia', serif;
+                    --color-background-primary: #000000;
+                    --color-background-secondary: #050505;
+                    --color-border-primary: rgba(148, 163, 184, 0.2);
+                    --color-border-secondary: rgba(148, 163, 184, 0.1);
+                    --color-border-tertiary: rgba(148, 163, 184, 0.08);
+                    --color-text-primary: #f9fafb;
+                    --color-text-secondary: #9ca3af;
+                    --color-text-tertiary: #6b7280;
+                    --color-text-success: #00c97a;
+                    --border-radius-md: 8px;
+                    --border-radius-lg: 16px;
+                }
+                *{box-sizing:border-box;margin:0;padding:0}
+                .founders-note {
+                    background: #000000 !important;
+                }
+                .section-main-heading {
+                    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+                    font-size: clamp(2rem, 5vw, 3.5rem);
+                    font-weight: 800;
+                    color: #ffffff;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    letter-spacing: -0.03em;
+                    line-height: 1.1;
+                    background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .wrap{padding:1.5rem 0;font-family:var(--font-sans);background:#000000}
+                .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:start}
+
+                /* LEFT — FOUNDER NOTE */
+                .founder-card{background:var(--color-background-primary);border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:2rem;position:relative;overflow:hidden}
+                .founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#00c97a,transparent)}
+                .fc-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
+                .fc-label-dot{width:5px;height:5px;border-radius:50%;background:#00c97a;animation:blink 1.5s infinite}
+                @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+                .quote-mark{font-size:3rem;color:var(--color-border-secondary);font-family:var(--font-serif);line-height:1;margin-bottom:.75rem;display:block}
+
+                .typed-text{font-size:14px;color:var(--color-text-secondary);line-height:1.8;margin-bottom:1.25rem;min-height:80px}
+                .cursor{display:inline-block;width:2px;height:14px;background:var(--color-text-success);margin-left:1px;animation:cur .8s infinite;vertical-align:middle}
+                @keyframes cur{0%,100%{opacity:1}50%{opacity:0}}
+
+                .highlight-line{font-size:14px;font-weight:500;color:var(--color-text-primary);line-height:1.6;padding:1rem 1.25rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:2px solid #00c97a;margin-bottom:1.25rem;opacity:0;transition:opacity .5s ease}
+                .highlight-line.show{opacity:1}
+
+                .para-2{font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1.5rem;opacity:0;transition:opacity .5s ease .2s}
+                .para-2.show{opacity:1}
+
+                .para-3{font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:2rem;opacity:0;transition:opacity .5s ease .4s}
+                .para-3.show{opacity:1}
+
+                .sig{display:flex;align-items:center;gap:.85rem;padding-top:1.25rem;border-top:.5px solid var(--color-border-tertiary);opacity:0;transition:opacity .5s ease .6s}
+                .sig.show{opacity:1}
+                .av{width:42px;height:42px;border-radius:10px;background:#00c97a;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.85rem;font-weight:600;color:#050f09;flex-shrink:0}
+                .sig-name{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+                .sig-role{font-family:var(--font-mono);font-size:10px;color:var(--color-text-tertiary);letter-spacing:.04em;margin-top:2px}
+
+                /* RIGHT — WHY FOVNDX */
+                .why-card{background:var(--color-background-primary);border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow:hidden}
+                .why-header{padding:1.25rem 1.5rem;border-bottom:.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:space-between}
+                .why-title{font-size:16px;font-weight:500;color:var(--color-text-primary)}
+                .why-tag{font-family:var(--font-mono);font-size:10px;color:#00c97a;background:rgba(0,201,122,.08);border:.5px solid rgba(0,201,122,.2);padding:.2rem .6rem;border-radius:var(--border-radius-md);letter-spacing:.05em}
+
+                .reason-item{padding:1.1rem 1.5rem;border-bottom:.5px solid var(--color-border-tertiary);cursor:pointer;transition:background .15s;position:relative}
+                .reason-item:last-of-type{border-bottom:none}
+                .reason-item:hover{background:var(--color-background-secondary)}
+                .reason-item.active{background:var(--color-background-secondary)}
+
+                .ri-top{display:flex;align-items:center;gap:1rem}
+                .ri-num{font-family:var(--font-mono);font-size:13px;font-weight:600;color:#00c97a;width:24px;flex-shrink:0}
+                .ri-title{font-size:14px;font-weight:500;color:var(--color-text-primary);flex:1}
+                .ri-arrow{font-size:12px;color:var(--color-text-tertiary);transition:transform .2s}
+                .reason-item.active .ri-arrow{transform:rotate(180deg)}
+
+                .ri-body{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(0.4,0,0.2,1),opacity .3s ease}
+                .ri-body.open{max-height:120px}
+                .ri-inner{padding:.75rem 0 .25rem 2.25rem;font-size:12px;color:var(--color-text-secondary);line-height:1.7}
+                .ri-inner strong{color:var(--color-text-primary);font-weight:500}
+
+                .why-footer{padding:1.25rem 1.5rem;border-top:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+                .why-cta{width:100%;font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.04em;padding:.75rem;border:.5px solid var(--color-border-primary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+                .why-cta:hover{background:var(--color-background-primary);border-color:#00c97a;color:#00c97a}
+
+                @media(max-width:600px){.grid{grid-template-columns:1fr}}
+            </style>
+
+            <div class="wrap">
+                <div class="grid">
+
+                    <!-- LEFT: FOUNDER NOTE -->
+                    <div class="founder-card">
+                        <div class="fc-label"><div class="fc-label-dot"></div>// FOUNDER'S NOTE · ROHAN CHAVHAN</div>
+                        <span class="quote-mark">"</span>
+                        <div class="typed-text" id="typedText"><span class="cursor" id="cur"></span></div>
+                        <div class="highlight-line" id="hl">fovndX was born out of that exact structural failure.</div>
+                        <div class="para-2" id="p2">We are not here to build another loose directory or a temporary network to aggregate crowds.</div>
+                        <div class="para-3" id="p3">We are building the definitive operating terminal for the next generation of Indian founders — where execution is the only currency that matters.</div>
+                        <div class="sig" id="sig">
+                            <div class="av">RC</div>
+                            <div>
+                                <div class="sig-name">Rohan Chavhan</div>
+                                <div class="sig-role">FOUNDER & CEO · FOVNDX</div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="founder-right scroll-animate scroll-animate-right">
-                        <div class="founder-stats-card">
-                            <h3 class="stats-title">Why FovndX?</h3>
-                            
-                            <div class="stat-item">
-                                <div class="stat-number">01</div>
-                                <div class="stat-text">No Vanity Noise</div>
+
+                    <!-- RIGHT: WHY FOVNDX -->
+                    <div class="why-card">
+                        <div class="why-header">
+                            <div class="why-title">Why fovndX?</div>
+                            <div class="why-tag">4 REASONS</div>
+                        </div>
+
+                        <div class="reason-item active" onclick="toggleReason(this)">
+                            <div class="ri-top">
+                                <div class="ri-num">01</div>
+                                <div class="ri-title">No Vanity Noise</div>
+                                <span class="ri-arrow" aria-hidden="true">▾</span>
                             </div>
-                            
-                            <div class="stat-item">
-                                <div class="stat-number">02</div>
-                                <div class="stat-text">Verified Execution</div>
-                            </div>
-                            
-                            <div class="stat-item">
-                                <div class="stat-number">03</div>
-                                <div class="stat-text">IP Protected</div>
-                            </div>
-                            
-                            <div class="stat-item">
-                                <div class="stat-number">04</div>
-                                <div class="stat-text">Data-Driven</div>
-                            </div>
-                            
-                            <div class="founder-cta">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrwDmT7ADW0hNwKk0fHFYaaN4RCf4Vatu7eyeGnV5HH7CukA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-secondary">Join the Team</a>
+                            <div class="ri-body open">
+                                <div class="ri-inner">No follower counts. No viral posts. No "thought leaders." Only <strong>verified execution data</strong> — commits, milestones, revenue — speaks here.</div>
                             </div>
                         </div>
+
+                        <div class="reason-item" onclick="toggleReason(this)">
+                            <div class="ri-top">
+                                <div class="ri-num">02</div>
+                                <div class="ri-title">Verified Execution</div>
+                                <span class="ri-arrow" aria-hidden="true">▾</span>
+                            </div>
+                            <div class="ri-body">
+                                <div class="ri-inner">Your <strong>Execution Graph</strong> auto-builds from GitHub, Figma, and milestones — tamper-proof, chronological, and shareable as one verified URL.</div>
+                            </div>
+                        </div>
+
+                        <div class="reason-item" onclick="toggleReason(this)">
+                            <div class="ri-top">
+                                <div class="ri-num">03</div>
+                                <div class="ri-title">IP Protected</div>
+                                <span class="ri-arrow" aria-hidden="true">▾</span>
+                            </div>
+                            <div class="ri-body">
+                                <div class="ri-inner">Your idea is anchored on-chain the moment you post it. The <strong>Idea Vault</strong> gates sensitive IP behind a one-click digital NDA with full audit logs.</div>
+                            </div>
+                        </div>
+
+                        <div class="reason-item" onclick="toggleReason(this)">
+                            <div class="ri-top">
+                                <div class="ri-num">04</div>
+                                <div class="ri-title">Data-Driven</div>
+                                <span class="ri-arrow" aria-hidden="true">▾</span>
+                            </div>
+                            <div class="ri-body">
+                                <div class="ri-inner">The <strong>Grit Score</strong> — India's startup CIBIL — reads your real signals. Investors filter by it. Builders grow with it. It never lies.</div>
+                            </div>
+                        </div>
+
+                        <div class="why-footer">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrwDmT7ADW0hNwKk0fHFYaaN4RCf4Vatu7eyeGnV5HH7CukA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="why-cta">fovndX: [JOIN THE TEAM] →</a>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
+            <script>
+                const fullText = "I have witnessed immense execution die prematurely because early-stage creators lacked the right security, structure, or signal.";
+                let i = 0;
+                const el = document.getElementById('typedText');
+                const cur = document.getElementById('cur');
+
+                function type() {
+                    if (i < fullText.length) {
+                        el.innerHTML = fullText.slice(0, ++i) + '<span class="cursor" id="cur"></span>';
+                        setTimeout(type, i < 10 ? 60 : Math.random() * 30 + 18);
+                    } else {
+                        setTimeout(() => {
+                            el.innerHTML = fullText;
+                            document.getElementById('hl').classList.add('show');
+                            setTimeout(() => {
+                                document.getElementById('p2').classList.add('show');
+                                setTimeout(() => {
+                                    document.getElementById('p3').classList.add('show');
+                                    setTimeout(() => document.getElementById('sig').classList.add('show'), 300);
+                                }, 300);
+                            }, 300);
+                        }, 400);
+                    }
+                }
+
+                setTimeout(type, 600);
+
+                function toggleReason(item) {
+                    const body = item.querySelector('.ri-body');
+                    const isOpen = body.classList.contains('open');
+                    document.querySelectorAll('.ri-body').forEach(b => b.classList.remove('open'));
+                    document.querySelectorAll('.reason-item').forEach(r => r.classList.remove('active'));
+                    if (!isOpen) { body.classList.add('open'); item.classList.add('active'); }
+                }
+            </script>
         </div>
     </section>
 
