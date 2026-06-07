@@ -453,7 +453,7 @@
         </div>
     </section>
 
-    <!-- Infrastructure Shift - Terminal Version -->
+    <!-- Core Idea & Exclusive Features -->
     <section id="manifesto" class="infrastructure-shift scroll-animate">
         <div class="container">
             <style>
@@ -468,7 +468,6 @@
                     --color-text-secondary: #9ca3af;
                     --color-text-tertiary: #6b7280;
                     --color-text-success: #00c97a;
-                    --color-text-danger: #dc2626;
                     --border-radius-md: 8px;
                     --border-radius-lg: 16px;
                 }
@@ -539,10 +538,6 @@
                     color: var(--color-text-success);
                     font-weight: 500;
                 }
-                .t-red {
-                    color: var(--color-text-danger);
-                    font-weight: 500;
-                }
                 .t-muted {
                     color: var(--color-text-tertiary);
                 }
@@ -596,9 +591,6 @@
                     margin-bottom: 1.5rem;
                     line-height: 1.2;
                 }
-                .manifesto-heading .flock-red {
-                    color: #dc2626;
-                }
                 .manifesto-subheading {
                     font-size: 12px;
                     color: var(--color-text-secondary);
@@ -633,12 +625,27 @@
                 .manifesto-body strong {
                     color: var(--color-text-primary);
                 }
-                .manifesto-closing {
-                    color: var(--color-text-primary);
-                    font-weight: 700;
+                .feature-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                .feature-item {
+                    padding: 1rem;
+                    border: 1px solid var(--color-border-secondary);
+                    border-radius: var(--border-radius-md);
+                    background: var(--color-background-secondary);
+                }
+                .feature-title {
                     font-size: 16px;
-                    padding-top: 1rem;
-                    border-top: 1px solid var(--color-border-secondary);
+                    font-weight: 700;
+                    color: var(--color-text-success);
+                    margin-bottom: 0.5rem;
+                    font-family: var(--font-mono);
+                }
+                .feature-desc {
+                    font-size: 14px;
+                    color: var(--color-text-secondary);
                 }
                 @media (max-width: 900px) {
                     .terminal-wrap {
@@ -652,58 +659,61 @@
             
             <div class="terminal-wrap">
                 <div class="manifesto-text">
-                    <div class="manifesto-label">// THE REALITY CHECK</div>
-                    <div class="manifesto-heading">"Startups need Capital and Code. Not a '<span class="flock-red">Flock</span>' to huddle with."</div>
+                    <div class="manifesto-label">// CORE IDEA</div>
+                    <div class="manifesto-heading">Replace Resumes with Proof of Execution</div>
                     <div class="manifesto-subheading"><img src="fovndx-logo.png" alt="fovndX Logo" class="subheading-logo"> — The world's first verified execution record.</div>
-                    <div class="manifesto-tagline">The world remembers builders who can prove they built.</div>
-                    <div class="manifesto-body">
-                        <p>The Indian startup ecosystem is exhausted by generic networking directories, chaotic group chats, and amateur '<strong style="color: #dc2626;">crowded flocks</strong>' that offer nothing but noise and high exposure to idea theft.</p>
-                        <p>Units of progress in the real business world are measured in immutable GitHub commits, verified Figma deployment cycles, and live revenue metrics—not in vanity member counts or social huddles.</p>
-                        <p>While copycats try to build numbers by assembling crowds into unvetted public lists, FovndX replaces passive community directories with an automated, data-driven Startup Operating System. We don't create chatrooms for people to talk about building; we build the cryptographic and financial infrastructure that protects your IP and automates your dealflow.</p>
-                    </div>
-                    <div class="manifesto-closing">
-                        WE ARE HERE TO REVOLUTIONIZE THE STARTUP ECOSYSTEM. CHOOSE YOUR INFRASTRUCTURE WISELY.
+                    <div class="manifesto-tagline">Build your reputation with what you ship, not what you say.</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-title">[01] Activity Feed</div>
+                            <div class="feature-desc">What you shipped, when you shipped it. No thought leadership, no motivational posts — just real progress.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-title">[02] Smart Matching</div>
+                            <div class="feature-desc">Right people find you automatically. Co-founders, investors, builders — all based on verified execution.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-title">[03] Verified Records</div>
+                            <div class="feature-desc">Everything logged. Nothing lost. Every commit, milestone, and revenue event is timestamped and verified.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-title">[04] Peer Validation</div>
+                            <div class="feature-desc">Your milestones, confirmed by others. Mentors and investors validate your progress for maximum credibility.</div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="terminal-box">
                     <div class="t-bar">
                         <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
-                        <div class="t-title">FOVNDX ~ INFRASTRUCTURE-SHIFT</div>
+                        <div class="t-title">FOVNDX ~ CORE-FEATURES</div>
                         <div></div>
                     </div>
                     <div class="t-body" id="infraTerminal">
-                        <span class="t-line" id="infra-l-0">$ fovndx audit --old-way</span>
+                        <span class="t-line" id="infra-l-0">$ fovndx features --load</span>
                         <span class="t-line" id="infra-l-1">&nbsp;</span>
-                        <span class="t-line" id="infra-l-2">▶ Scanning old ecosystem...</span>
+                        <span class="t-line" id="infra-l-2">▶ Loading platform features...</span>
                         <span class="t-line" id="infra-l-3">&nbsp;</span>
-                        <span class="t-line" id="infra-l-4"><span class="t-red">❌</span> Crowded Flocks → High noise, IP exposure</span>
-                        <span class="t-line" id="infra-l-5"><span class="t-red">❌</span> Chaotic Chats → Unstructured communication</span>
-                        <span class="t-line" id="infra-l-6"><span class="t-red">❌</span> Vanity Numbers → No real progress metrics</span>
-                        <span class="t-line" id="infra-l-7">&nbsp;</span>
-                        <span class="t-line" id="infra-l-8">$ fovndx upgrade --to fovndx</span>
-                        <span class="t-line" id="infra-l-9">&nbsp;</span>
-                        <span class="t-line" id="infra-l-10">▶ Upgrading infrastructure...</span>
-                        <span class="t-line" id="infra-l-11">&nbsp;</span>
-                        <span class="t-line" id="infra-l-12"><span class="t-green">✓</span> Crowded Flocks → <span class="t-val">Verified Execution</span></span>
-                        <span class="t-line" id="infra-l-13"><span class="t-green">✓</span> Chaotic Chats → <span class="t-val">IP Protection</span></span>
-                        <span class="t-line" id="infra-l-14"><span class="t-green">✓</span> Vanity Numbers → <span class="t-val">Live Metrics</span></span>
-                        <span class="t-line" id="infra-l-15">&nbsp;</span>
-                        <span class="t-line" id="infra-l-16">▶ Verifying new infrastructure...</span>
-                        <span class="t-line" id="infra-l-17">&nbsp;</span>
-                        <span class="t-line" id="infra-l-18"><span class="t-green">✓</span> Immutable</span>
-                        <span class="t-line" id="infra-l-19"><span class="t-green">✓</span> Secure</span>
-                        <span class="t-line" id="infra-l-20"><span class="t-green">✓</span> Automated</span>
-                        <span class="t-line" id="infra-l-21">&nbsp;</span>
-                        <span class="t-line" id="infra-l-22"><span class="t-green">✓ SUCCESS: INFRASTRUCTURE SHIFT COMPLETE</span></span>
+                        <span class="t-line" id="infra-l-4"><span class="t-green">✓</span> ACTIVITY FEED       — What you shipped, when you shipped it.</span>
+                        <span class="t-line" id="infra-l-5"><span class="t-green">✓</span> SMART MATCHING      — Right people find you automatically.</span>
+                        <span class="t-line" id="infra-l-6"><span class="t-green">✓</span> VERIFIED RECORDS    — Everything logged. Nothing lost.</span>
+                        <span class="t-line" id="infra-l-7"><span class="t-green">✓</span> PEER VALIDATION     — Your milestones, confirmed by others.</span>
+                        <span class="t-line" id="infra-l-8">&nbsp;</span>
+                        <span class="t-line" id="infra-l-9">▶ Verifying integrity...</span>
+                        <span class="t-line" id="infra-l-10">&nbsp;</span>
+                        <span class="t-line" id="infra-l-11"><span class="t-green">✓</span> NO RESUMES NEEDED</span>
+                        <span class="t-line" id="infra-l-12"><span class="t-green">✓</span> NO COLD OUTREACH</span>
+                        <span class="t-line" id="infra-l-13"><span class="t-green">✓</span> NO VANITY METRICS</span>
+                        <span class="t-line" id="infra-l-14">&nbsp;</span>
+                        <span class="t-line" id="infra-l-15"><span class="t-green">✓ SUCCESS: fovndX READY FOR LAUNCH</span></span>
                     </div>
-                    <div class="t-footer"><div class="status-dot"></div><span id="infraStatus">OPTIMIZING EXECUTION</span></div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="infraStatus">EXECUTION RECORD ACTIVE</span></div>
                 </div>
             </div>
             
             <script>
                 function animateInfraTerminal() {
-                    for (let i = 0; i <= 22; i++) {
+                    for (let i = 0; i <= 15; i++) {
                         setTimeout(() => {
                             const el = document.getElementById('infra-l-' + i);
                             if (el) el.classList.add('show');
