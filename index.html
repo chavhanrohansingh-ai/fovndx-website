@@ -110,15 +110,11 @@
                     <div class="hero-features">
                         <div class="hero-feature">
                             <span class="checkmark">✓</span>
-                            <span>Execution Graph — Your entire startup journey — commits, milestones, revenue — written in real-time, tamper-proof, forever. Not a portfolio. A proof.</span>
+                            <span>Execution Feed — No thought leadership. No motivational posts. Only what you shipped, what you learned, what you proved — today.</span>
                         </div>
                         <div class="hero-feature">
                             <span class="checkmark">✓</span>
-                            <span>Grit Score — An AI that reads what you actually did. Not your network. Not your college. Not your pitch. Just undeniable execution.</span>
-                        </div>
-                        <div class="hero-feature">
-                            <span class="checkmark">✓</span>
-                            <span>Witness System — When a mentor or investor marks your milestone as real — the world believes it 3x more than anything you say about yourself.</span>
+                            <span>AI Matching Engine — Finds the co-founder whose skills complete yours. The investor whose thesis fits your stage. The builder your startup actually needs.</span>
                         </div>
                     </div>
                 </div>
@@ -194,216 +190,264 @@
                     background: #000000 !important;
                 }
                 .wrap{padding:1.5rem 0;font-family:var(--font-sans)}
-                .top-label{font-size:24px;font-weight:700;color:var(--color-text-success);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;font-family:var(--font-mono)}
-                .headline{font-size:42px;font-weight:700;color:var(--color-text-primary);margin-bottom:.35rem;line-height:1.2}
-                .sub{font-size:14px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6;max-width:520px}
-                .role-tabs{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
-                .rtab{font-size:12px;font-weight:500;padding:.45rem 1rem;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s;font-family:var(--font-mono);letter-spacing:.04em}
-                .rtab:hover{color:var(--color-text-primary);border-color:var(--color-border-primary)}
-                .rtab.on{background:var(--color-background-primary);border-color:var(--color-border-primary);color:var(--color-text-primary);border-width:0.5px}
-                .content-area{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
-                .left-panel{}
-                .role-num{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);letter-spacing:.08em;margin-bottom:.75rem}
-                .role-big{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:.5rem;line-height:1.2}
-                .role-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.65;margin-bottom:1.25rem}
-                .point-list{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.5rem}
-                .point{border-top:.5px solid var(--color-border-tertiary);padding-top:.85rem}
-                .p-num{font-family:var(--font-mono);font-size:11px;color:var(--color-text-success);font-weight:500;margin-bottom:.2rem}
-                .p-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:.2rem}
-                .p-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.55}
-                .cta-btn{font-family:var(--font-mono);font-size:12px;font-weight:500;border:.5px solid var(--color-border-primary);border-radius:var(--border-radius-md);padding:.6rem 1.25rem;background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;letter-spacing:.03em;transition:all .15s;display:inline-block;text-decoration:none}
-                .cta-btn:hover{background:var(--color-background-secondary)}
-
-                .terminal-box{background:var(--color-background-primary);border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow:hidden}
-                .t-bar{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;border-bottom:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
-                .t-dots{display:flex;gap:5px}
-                .t-dot{width:9px;height:9px;border-radius:50%}
-                .d-r{background:#ff5f57}.d-y{background:#febc2e}.d-g{background:#28c840}
-                .t-title{font-family:var(--font-mono);font-size:10px;color:var(--color-text-tertiary);letter-spacing:.06em}
-                .t-body{padding:1rem;font-family:var(--font-mono);font-size:11px;line-height:1.8;min-height:220px;position:relative}
-                .t-line{color:var(--color-text-secondary);display:block;opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s ease}
-                .t-line.show{opacity:1;transform:none}
-                .t-cmd{color:var(--color-text-primary)}
-                .t-green{color:var(--color-text-success);font-weight:500}
-                .t-muted{color:var(--color-text-tertiary)}
-                .t-label{color:var(--color-text-secondary)}
-                .t-val{color:var(--color-text-primary)}
-                .t-check{color:var(--color-text-success)}
-                .t-footer{padding:.55rem 1rem;border-top:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);font-family:var(--font-mono);font-size:10px;color:var(--color-text-tertiary);display:flex;align-items:center;gap:.5rem}
-                .status-dot{width:5px;height:5px;border-radius:50%;background:var(--color-text-success);animation:blink 1.5s infinite}
-                @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
-                @media(max-width:600px){.content-area{grid-template-columns:1fr}}
+                
+                /* HEADER */
+                .sec-eye{font-family:var(--font-mono);font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-success);margin-bottom:.6rem}
+                .sec-h{font-size:42px;font-weight:700;color:var(--color-text-primary);line-height:1.15;margin-bottom:.35rem}
+                .sec-h em{font-style:italic;color:var(--color-text-secondary);font-weight:300}
+                .sec-h .prove-it{color:#dc2626}
+                .sec-h .belong{color:#00c97a}
+                .sec-sub{font-size:13px;color:var(--color-text-tertiary);margin-bottom:1.5rem;font-family:var(--font-mono)}
+                
+                /* TABS */
+                .tabs{display:flex;gap:6px;margin-bottom:1.25rem;flex-wrap:wrap}
+                .tab{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.06em;padding:.4rem .9rem;border:.5px solid var(--color-border-secondary);border-radius:2px;background:transparent;color:var(--color-text-tertiary);cursor:pointer;transition:all .15s}
+                .tab:hover{color:var(--color-text-primary);border-color:var(--color-border-primary)}
+                .tab.on{background:var(--color-background-primary);border-color:var(--color-text-success);color:var(--color-text-success)}
+                
+                /* MAIN GRID */
+                .main-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+                
+                /* LEFT */
+                .left{}
+                .role-eye{font-family:var(--font-mono);font-size:10px;color:var(--color-text-tertiary);letter-spacing:.08em;margin-bottom:.75rem}
+                .role-title{font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1.2;margin-bottom:.35rem}
+                .role-title em{font-style:italic;font-weight:300;color:var(--color-text-secondary)}
+                .role-desc{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);margin-bottom:1.25rem;letter-spacing:.02em}
+                
+                /* FEATURE LIST */
+                .feat-list{display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem;border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden}
+                
+                .feat-row{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;border-bottom:.5px solid var(--color-border-tertiary);transition:background .15s;position:relative}
+                .feat-row:last-child{border-bottom:none}
+                .feat-row.visible:hover{background:var(--color-background-secondary)}
+                .feat-row.locked{cursor:pointer}
+                .feat-row.locked:hover{background:var(--color-background-secondary)}
+                
+                .feat-num{font-family:var(--font-mono);font-size:10px;color:var(--color-text-success);font-weight:600;width:20px;flex-shrink:0}
+                .feat-num.lk{color:var(--color-text-tertiary)}
+                
+                .feat-name{font-size:12px;font-weight:500;color:var(--color-text-primary);flex:1}
+                .feat-check{font-size:11px;color:var(--color-text-success)}
+                
+                /* LOCKED ROW */
+                .lock-icon{font-size:11px;color:var(--color-text-tertiary);flex-shrink:0}
+                .redacted{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);flex:1;letter-spacing:.08em;user-select:none;transition:all .2s}
+                .feat-row.locked:hover .redacted{color:var(--color-text-secondary);letter-spacing:.02em}
+                
+                /* TOOLTIP */
+                .lock-tooltip{position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-family:var(--font-mono);font-size:10px;color:var(--color-text-success);background:var(--color-background-secondary);border:.5px solid var(--color-border-secondary);padding:.2rem .6rem;border-radius:2px;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+                .feat-row.locked:hover .lock-tooltip{opacity:1}
+                
+                /* CTA */
+                .role-cta{width:100%;font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.05em;padding:.7rem 1rem;border:.5px solid var(--color-border-primary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem}
+                .role-cta:hover{border-color:var(--color-text-success);color:var(--color-text-success)}
+                .cta-note{font-family:var(--font-mono);font-size:9px;color:var(--color-text-tertiary);letter-spacing:.06em;text-align:center}
+                
+                /* TERMINAL */
+                .terminal{background:var(--color-background-primary);border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);overflow:hidden}
+                .t-bar{display:flex;align-items:center;justify-content:space-between;padding:.5rem .85rem;border-bottom:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+                .t-dots{display:flex;gap:4px}
+                .td{width:8px;height:8px;border-radius:50%}
+                .dr{background:#ff5f57}.dy{background:#febc2e}.dg{background:#28c840}
+                .t-name{font-family:var(--font-mono);font-size:9px;color:var(--color-text-tertiary);letter-spacing:.06em}
+                .t-body{padding:1rem;font-family:var(--font-mono);font-size:11px;line-height:1.9;min-height:200px}
+                .tl{display:block;opacity:0;transform:translateY(3px);transition:opacity .25s ease,transform .25s ease;color:var(--color-text-secondary)}
+                .tl.s{opacity:1;transform:none}
+                .tl.cmd{color:var(--color-text-primary)}
+                .tl.grn{color:var(--color-text-success);font-weight:500}
+                .tl.dim{color:var(--color-text-tertiary)}
+                .tl.val{color:var(--color-text-primary)}
+                .tl.red{color:var(--color-text-tertiary);letter-spacing:.08em}
+                .t-foot{padding:.5rem .85rem;border-top:.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);font-family:var(--font-mono);font-size:9px;color:var(--color-text-tertiary);display:flex;align-items:center;gap:.4rem;letter-spacing:.05em}
+                .t-dot-live{width:5px;height:5px;border-radius:50%;background:var(--color-text-success);animation:bl 1.5s infinite;flex-shrink:0}
+                @keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+                
+                @media(max-width:580px){.main-grid{grid-template-columns:1fr}}
             </style>
-
+            
             <div class="wrap">
-                <div class="top-label">// fovndX is for all</div>
-                <div class="headline">If you <span style="color: #dc2626; font-weight: 800;">prove</span> it, you <span style="color: #00c97a; font-weight: 800;">belong</span> here.</div>
-                <p class="sub">Pitch decks are manufactured noise. fovndX extracts signal directly from your actual execution. Choose your path:</p>
-
-                <div class="role-tabs">
-                    <button class="rtab on" onclick="switchRole('founder',this)">FOR FOUNDERS</button>
-                    <button class="rtab" onclick="switchRole('investor',this)">FOR INVESTORS</button>
-                    <button class="rtab" onclick="switchRole('builder',this)">FOR BUILDERS</button>
-                    <button class="rtab" onclick="switchRole('mentor',this)">FOR MENTORS</button>
+                <div class="sec-eye">// fovndX is for all</div>
+                <div class="sec-h">If you <span class="prove-it">prove</span> it,<br><em>you <span class="belong">belong</span> here.</em></div>
+                <div class="sec-sub">Pitch decks are noise. fovndX reads signal.</div>
+            
+                <div class="tabs">
+                    <button class="tab on" onclick="sw('founder',this)">FOR FOUNDERS</button>
+                    <button class="tab" onclick="sw('investor',this)">FOR INVESTORS</button>
+                    <button class="tab" onclick="sw('builder',this)">FOR BUILDERS</button>
+                    <button class="tab" onclick="sw('mentor',this)">FOR MENTORS</button>
                 </div>
-
-                <div class="content-area">
-                    <div class="left-panel" id="leftPanel"></div>
-                    <div class="terminal-box">
+            
+                <div class="main-grid">
+                    <div class="left" id="leftCol"></div>
+                    <div class="terminal">
                         <div class="t-bar">
-                            <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
-                            <div class="t-title" id="tTitle">FOVNDX ~ EXECUTION-GRAPH-LIVE</div>
+                            <div class="t-dots"><div class="td dr"></div><div class="td dy"></div><div class="td dg"></div></div>
+                            <div class="t-name" id="tName">FOVNDX ~ EXECUTION-GRAPH-LIVE</div>
                             <div></div>
                         </div>
                         <div class="t-body" id="tBody"></div>
-                        <div class="t-footer"><div class="status-dot"></div><span id="tStatus">MONITORING ACTIVE</span></div>
+                        <div class="t-foot"><div class="t-dot-live"></div><span id="tFoot">MONITORING ACTIVE · ACCESS PARTIAL</span></div>
                     </div>
                 </div>
             </div>
-
+            
             <script>
-                const roles = {
+                const data = {
                     founder: {
-                        num: '// ROLE 01',
-                        title: 'Build in public.\nGet funded.',
-                        desc: 'Your execution graph is your fundraising tool. It builds automatically while you work. Investors find you — no cold emails, no middlemen.',
-                        points: [
-                            { n: '[01]', t: 'Execution Graph', d: 'Every commit, milestone, and revenue event auto-builds your verified journey. Tamper-proof. Chronological. Shareable.' },
-                            { n: '[02]', t: 'Grit Score', d: 'An AI metric that reads what you actually built. The higher it goes, the more visible you become to verified investors.' },
-                            { n: '[03]', t: 'Idea Vault', d: 'Show the world your problem. Lock your solution. One-click NDA before anyone sees the real IP.' }
+                        eye: '// 01',
+                        title: 'Build it.<br><em>The funding follows.</em>',
+                        desc: 'Your work becomes your pitch. Automatically.',
+                        features: [
+                            { n:'01', name:'Verified Profiles', locked:false, check:'✓' },
+                            { n:'02', name:'Startup Discovery', locked:false, check:'✓' },
+                            { n:'03', name:'Mentor Connect',    locked:false, check:'✓' },
+                            { n:'04', locked:true,  hint:'"Replaces your pitch deck."' },
+                            { n:'05', locked:true,  hint:'"Your execution, scored."'  },
                         ],
-                        cta: 'fovndX: [CLAIM FOUNDER SPOT] →',
-                        tTitle: 'FOVNDX ~ EXECUTION-GRAPH-LIVE',
-                        tStatus: 'EXECUTION GRAPH BUILDING · GRIT SCORE LIVE',
+                        cta: '[CLAIM FOUNDER SPOT] →',
+                        note: 'FREE TO JOIN · FOUNDING SPOTS LIMITED',
+                        tName: 'FOVNDX ~ EXECUTION-GRAPH-LIVE',
+                        tFoot: 'MONITORING ACTIVE · FULL ACCESS: JOIN REQUIRED',
                         lines: [
-                            { cls: 't-cmd', text: '$ fovndx init --startup "AI Invoice SaaS"' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-label', text: '[GRAPH] IDEA ANCHORED → POLYGON HASH: 7EF4A1C' },
-                            { cls: 't-label', text: '[GRAPH] CO-FOUNDER JOINED → PRIYA MEHTA · CTO' },
-                            { cls: 't-label', text: '[GRAPH] COMMITS THIS WEEK → 247 (+12%)' },
-                            { cls: 't-label', text: '[GRAPH] MILESTONE VERIFIED → MVP LIVE' },
-                            { cls: 't-label', text: '[GRAPH] REVENUE DETECTED → ₹18,000 MRR' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-green', text: '✓ GRIT SCORE: 84. INVESTOR FEED: ACTIVE.' },
+                            { c:'cmd', t:'$ fovndx init --startup "████████████"' },
+                            { c:'dim', t:'' },
+                            { c:'red', t:'[GRAPH] ████████████████████  · ANCHORED' },
+                            { c:'red', t:'[GRAPH] ████████████████████  · VERIFIED' },
+                            { c:'red', t:'[GRAPH] REVENUE ██████████    · DETECTED' },
+                            { c:'dim', t:'' },
+                            { c:'grn', t:'✓ GRIT SCORE: ██.  INVESTOR FEED: ACTIVE.' },
                         ]
                     },
                     investor: {
-                        num: '// ROLE 02',
-                        title: 'Better deals.\nZero noise.',
-                        desc: 'Filter by Grit Score. Review verified execution data before a single call. Due diligence in hours, not months.',
-                        points: [
-                            { n: '[01]', t: 'Grit Score filter', d: 'Set your minimum Grit Score. Only see founders who are actually building — not just pitching.' },
-                            { n: '[02]', t: 'Execution Graph DD', d: 'Every startup\'s complete verified journey is one click away. Commits, milestones, revenue — all real, all timestamped.' },
-                            { n: '[03]', t: '1-click NDA access', d: 'Request deep access instantly. Digital NDA signed, vault unlocked, financials visible — in seconds.' }
+                        eye: '// 02',
+                        title: 'See what<br><em>others can\'t.</em>',
+                        desc: 'Signal, not noise.',
+                        features: [
+                            { n:'01', name:'Startup Discovery',       locked:false, check:'✓' },
+                            { n:'02', name:'Verified Founder Profiles',locked:false, check:'✓' },
+                            { n:'03', name:'Mentor Network Access',   locked:false, check:'✓' },
+                            { n:'04', locked:true, hint:'"Filter by execution score."' },
+                            { n:'05', locked:true, hint:'"Due diligence in minutes."'  },
                         ],
-                        cta: 'fovndX: [ACCESS DEAL FLOW] →',
-                        tTitle: 'FOVNDX ~ DEAL-FILTER-ENGINE',
-                        tStatus: 'DEAL FLOW MONITORING · ENCRYPTED',
+                        cta: '[ACCESS DEAL FLOW] →',
+                        note: 'VERIFIED INVESTORS ONLY · KYC REQUIRED',
+                        tName: 'FOVNDX ~ DEAL-FILTER-ENGINE',
+                        tFoot: 'DEAL FLOW LIVE · DETAILS: NDA REQUIRED',
                         lines: [
-                            { cls: 't-cmd', text: '$ fovndx filter --grit-min 80 --stage MVP' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-label', text: 'SCANNING VERIFIED STARTUP POOL...' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-val', text: '[MATCH] Rahul Sharma    · Grit 84 · FinTech SaaS' },
-                            { cls: 't-val', text: '[MATCH] Sneha Patil     · Grit 91 · HealthAI' },
-                            { cls: 't-val', text: '[MATCH] Arjun Nair      · Grit 87 · EdTech B2B' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-green', text: '✓ 3 VERIFIED MATCHES. NO COLD EMAILS NEEDED.' },
+                            { c:'cmd', t:'$ fovndx filter --grit-min 80' },
+                            { c:'dim', t:'' },
+                            { c:'red', t:'[MATCH] ████████████  · Grit ██' },
+                            { c:'red', t:'[MATCH] ████████████  · Grit ██' },
+                            { c:'red', t:'[MATCH] ████████████  · Grit ██' },
+                            { c:'dim', t:'' },
+                            { c:'grn', t:'✓ 3 VERIFIED.  DETAILS: NDA REQUIRED.' },
                         ]
                     },
                     builder: {
-                        num: '// ROLE 03',
-                        title: 'Your work\nis your CV.',
-                        desc: 'GitHub commits, completed gigs, witnessed contributions — all build your Grit Score. The best builders get the best opportunities.',
-                        points: [
-                            { n: '[01]', t: 'Proof of work parser', d: 'fovndX reads your GitHub history and converts real commits into verified reputation. No resume needed.' },
-                            { n: '[02]', t: 'Merit-based gig access', d: 'High Grit Score unlocks premium gigs from verified startups. Better score, better work, better pay.' },
-                            { n: '[03]', t: 'Portable reputation', d: 'One URL. Every commit. Every completed gig. Witnessed forever. Share anywhere, own it always.' }
+                        eye: '// 03',
+                        title: 'Your commits<br><em>speak louder.</em>',
+                        desc: 'No resume needed.',
+                        features: [
+                            { n:'01', name:'Gig Marketplace',  locked:false, check:'✓' },
+                            { n:'02', name:'Verified Profile', locked:false, check:'✓' },
+                            { n:'03', name:'Community Feed',   locked:false, check:'✓' },
+                            { n:'04', locked:true, hint:'"Proof parsed from GitHub."'    },
+                            { n:'05', locked:true, hint:'"One URL. Forever portable."'   },
                         ],
-                        cta: 'fovndX: [CLAIM BUILDER SPOT] →',
-                        tTitle: 'FOVNDX ~ PROOF-OF-WORK-PARSER',
-                        tStatus: 'PARSING GITHUB HISTORY · LIVE',
+                        cta: '[CLAIM BUILDER SPOT] →',
+                        note: 'FREE TO JOIN · GRIT SCORE STARTS ON SIGNUP',
+                        tName: 'FOVNDX ~ PROOF-OF-WORK-PARSER',
+                        tFoot: 'PARSING ACTIVE · FULL PROFILE: JOIN REQUIRED',
                         lines: [
-                            { cls: 't-cmd', text: '$ fovndx parse --github @yourhandle' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-label', text: 'COMMITS STREAK    → 47 days continuous' },
-                            { cls: 't-label', text: 'REPOS CONTRIBUTED → 12 verified' },
-                            { cls: 't-label', text: 'GIGS COMPLETED    → 8 · rating 4.9/5' },
-                            { cls: 't-label', text: 'WITNESS EVENTS    → 3 · weight ×3' },
-                            { cls: 't-label', text: 'GRIT SCORE        → 79 → 83 ↑' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-green', text: '✓ PROOF PARSED. PREMIUM GIGS UNLOCKED.' },
+                            { c:'cmd', t:'$ fovndx parse --github @████████' },
+                            { c:'dim', t:'' },
+                            { c:'red', t:'STREAK      →  ██ days continuous' },
+                            { c:'red', t:'REPOS       →  ██ verified'        },
+                            { c:'red', t:'GRIT SCORE  →  ██ → ██ ↑'         },
+                            { c:'dim', t:'' },
+                            { c:'grn', t:'✓ PROOF PARSED.  ACCESS: JOIN TO UNLOCK.' },
                         ]
                     },
                     mentor: {
-                        num: '// ROLE 04',
-                        title: 'Your legacy,\nquantified.',
-                        desc: 'Every startup you help succeed raises your Authority Score. Advisory equity lets your expertise compound into real financial upside.',
-                        points: [
-                            { n: '[01]', t: 'Authority Score', d: 'Every witnessed milestone and mentee success permanently raises your Authority Score. Your impact, on record.' },
-                            { n: '[02]', t: 'AI-matched founders', d: 'No cold inbound. fovndX matches you with founders who need exactly your industry and stage expertise.' },
-                            { n: '[03]', t: 'Advisory equity engine', d: 'Standard advisory equity agreements, vesting schedules, and cap table basics — built in, legally templated.' }
+                        eye: '// 04',
+                        title: 'Your legacy,<br><em>on record.</em>',
+                        desc: 'Impact that compounds.',
+                        features: [
+                            { n:'01', name:'Mentor Connect',    locked:false, check:'✓' },
+                            { n:'02', name:'Founder Discovery', locked:false, check:'✓' },
+                            { n:'03', name:'Community Access',  locked:false, check:'✓' },
+                            { n:'04', locked:true, hint:'"Your impact, quantified."'    },
+                            { n:'05', locked:true, hint:'"Equity. Automatically."'      },
                         ],
-                        cta: 'fovndX: [CLAIM MENTOR SPOT] →',
-                        tTitle: 'FOVNDX ~ AUTHORITY-SCORE-ENGINE',
-                        tStatus: 'AUTHORITY SCORE COMPOUNDING · LIVE',
+                        cta: '[CLAIM MENTOR SPOT] →',
+                        note: 'VERIFIED MENTORS ONLY · APPLICATION REQUIRED',
+                        tName: 'FOVNDX ~ AUTHORITY-SCORE-ENGINE',
+                        tFoot: 'LEGACY TRACKING · FULL DATA: JOIN REQUIRED',
                         lines: [
-                            { cls: 't-cmd', text: '$ fovndx mentor --profile @your-handle' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-label', text: 'STARTUPS MENTORED    → 12 verified' },
-                            { cls: 't-label', text: 'MILESTONES WITNESSED → 34 anchored' },
-                            { cls: 't-label', text: 'FUNDING FACILITATED  → ₹2.4Cr' },
-                            { cls: 't-label', text: 'ADVISORY EQUITY HELD → 3 companies' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-val', text: 'AUTHORITY SCORE → 91 / 100' },
-                            { cls: 't-muted', text: '' },
-                            { cls: 't-green', text: '✓ LEGACY QUANTIFIED. FOUNDERS INCOMING.' },
+                            { c:'cmd', t:'$ fovndx mentor --scan @████████' },
+                            { c:'dim', t:'' },
+                            { c:'red', t:'STARTUPS HELPED   →  ██ verified'  },
+                            { c:'red', t:'EQUITY HELD       →  ██ companies' },
+                            { c:'red', t:'AUTHORITY SCORE   →  ██ / 100'     },
+                            { c:'dim', t:'' },
+                            { c:'grn', t:'✓ LEGACY QUANTIFIED.  JOIN TO UNLOCK.' },
                         ]
                     }
                 };
-
+                
                 function buildLeft(r) {
-                    const d = roles[r];
+                    const d = data[r];
+                    const feats = d.features.map((f,i) => {
+                        if (!f.locked) return `
+                            <div class="feat-row visible">
+                                <span class="feat-num">${f.n}</span>
+                                <span class="feat-name">${f.name}</span>
+                                <span class="feat-check">${f.check}</span>
+                            </div>`;
+                        return `
+                            <div class="feat-row locked">
+                                <span class="feat-num lk">${f.n}</span>
+                                <span class="lock-icon">🔒</span>
+                                <span class="redacted">██████████████████</span>
+                                <span class="lock-tooltip">${f.hint}</span>
+                            </div>`;
+                    }).join('');
+                
                     return `
-                        <div class="role-num">${d.num}</div>
-                        <div class="role-big">${d.title.replace('\n','<br>')}</div>
+                        <div class="role-eye">${d.eye}</div>
+                        <div class="role-title" style="font-size:20px;font-weight:500;color:var(--color-text-primary);line-height:1.2;margin-bottom:.35rem">${d.title}</div>
                         <div class="role-desc">${d.desc}</div>
-                        <div class="point-list">${d.points.map(p=>`
-                            <div class="point">
-                                <div class="p-num">${p.n}</div>
-                                <div class="p-title">${p.t}</div>
-                                <div class="p-desc">${p.d}</div>
-                            </div>`).join('')}
-                        </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrwDmT7ADW0hNwKk0fHFYaaN4RCf4Vatu7eyeGnV5HH7CukA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="cta-btn">${d.cta}</a>
+                        <div class="feat-list">${feats}</div>
+                        <button class="role-cta"><span>${d.cta}</span></button>
+                        <div class="cta-note">${d.note}</div>
                     `;
                 }
-
+                
                 function buildTerminal(r) {
-                    const d = roles[r];
-                    document.getElementById('tTitle').textContent = d.tTitle;
-                    document.getElementById('tStatus').textContent = d.tStatus;
+                    const d = data[r];
+                    document.getElementById('tName').textContent = d.tName;
+                    document.getElementById('tFoot').textContent = d.tFoot;
                     const body = document.getElementById('tBody');
-                    body.innerHTML = d.lines.map((l,i)=>
-                        `<span class="t-line ${l.cls}" id="tl${i}">${l.text || '&nbsp;'}</span>`
+                    body.innerHTML = d.lines.map((l,i) => 
+                        `<span class="tl ${l.c}" id="tl${i}">${l.t || '&nbsp;'}</span>`
                     ).join('');
-                    d.lines.forEach((_,i)=>{
-                        setTimeout(()=>{
+                    d.lines.forEach((_,i) => {
+                        setTimeout(() => {
                             const el = document.getElementById('tl'+i);
-                            if(el) el.classList.add('show');
-                        }, i * 120);
+                            if (el) el.classList.add('s');
+                        }, i * 110);
                     });
                 }
-
-                function switchRole(r, btn) {
-                    document.querySelectorAll('.rtab').forEach(b=>b.classList.remove('on'));
+                
+                function sw(r, btn) {
+                    document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
                     btn.classList.add('on');
-                    document.getElementById('leftPanel').innerHTML = buildLeft(r);
+                    document.getElementById('leftCol').innerHTML = buildLeft(r);
                     buildTerminal(r);
                 }
-
-                document.getElementById('leftPanel').innerHTML = buildLeft('founder');
+                
+                document.getElementById('leftCol').innerHTML = buildLeft('founder');
                 buildTerminal('founder');
             </script>
         </div>
