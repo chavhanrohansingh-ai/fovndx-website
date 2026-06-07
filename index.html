@@ -99,9 +99,9 @@
                         <span class="hero-pill">COMING SOON • INDIA'S FIRST STARTUP OPERATING SYSTEM</span>
                     </div>
                     <h1 class="hero-main-heading">
-                        The world remembers builders who can prove they built.
+                        The world remembers <span id="roleSwitcher" style="color: #3b82f6; font-weight: 800; display: inline-block; min-width: 100px; vertical-align: top;">builders</span> who can <span style="color: #00c97a;">prove</span> they built.
                         <br>
-                        <span class="logo-gradient">fovndX</span> — The world's first verified execution record.
+                        <span style="color: #ffffff;">fovndX</span> — The world's first <span style="color: #00c97a;">verified</span> execution record.
                     </h1>
                     <p class="hero-description">
                         fovndX replaces resumes with proof of work. Document your builds. Demonstrate execution.
@@ -160,7 +160,7 @@
                         </form>
                         
                         <div class="waitlist-footer">
-                            <span class="waitlist-count">368+</span>
+                            <span class="waitlist-count"><span id="waitlistCounter">368</span>+</span>
                             <span class="waitlist-text">startups and builders joined</span>
                         </div>
                     </div>
@@ -1012,6 +1012,107 @@
         </div>
     </footer>
 
+    <script>
+        // Role Switcher Typewriter Animation
+        function roleSwitcher() {
+            const roles = ['builders', 'founders'];
+            const colors = ['#3b82f6', '#f97316'];
+            let currentRoleIndex = 0;
+            let isDeleting = false;
+            let charIndex = 0;
+            
+            const el = document.getElementById('roleSwitcher');
+            if (!el) return;
+            
+            function animate() {
+                const currentRole = roles[currentRoleIndex];
+                const currentColor = colors[currentRoleIndex];
+                
+                el.style.color = currentColor;
+                
+                if (isDeleting) {
+                    charIndex--;
+                    el.textContent = currentRole.substring(0, charIndex);
+                } else {
+                    charIndex++;
+                    el.textContent = currentRole.substring(0, charIndex);
+                }
+                
+                let typeSpeed = isDeleting ? 100 : 150; // Slower typing
+                
+                if (!isDeleting && charIndex === currentRole.length) {
+                    typeSpeed = 2500; // Longer pause at end
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                }
+                
+                setTimeout(animate, typeSpeed);
+            }
+            
+            animate();
+        }
+        
+        // Waitlist Counter with 24-hour increment and counting animation
+        function waitlistCounter() {
+            const counterEl = document.getElementById('waitlistCounter');
+            if (!counterEl) return;
+            
+            const STORAGE_KEY = 'waitlistCount';
+            const LAST_UPDATE_KEY = 'waitlistLastUpdate';
+            const BASE_COUNT = 368;
+            
+            // Initialize or get stored values
+            let currentCount = parseInt(localStorage.getItem(STORAGE_KEY)) || BASE_COUNT;
+            let lastUpdate = localStorage.getItem(LAST_UPDATE_KEY);
+            
+            const now = Date.now();
+            
+            if (lastUpdate) {
+                const hoursSinceUpdate = (now - parseInt(lastUpdate)) / (1000 * 60 * 60);
+                
+                // Add random 4 or 5 every 24 hours
+                if (hoursSinceUpdate >= 24) {
+                    const increments = Math.floor(hoursSinceUpdate / 24);
+                    for (let i = 0; i < increments; i++) {
+                        currentCount += Math.random() < 0.5 ? 4 : 5;
+                    }
+                    localStorage.setItem(STORAGE_KEY, currentCount.toString());
+                    localStorage.setItem(LAST_UPDATE_KEY, now.toString());
+                }
+            } else {
+                // First visit
+                localStorage.setItem(STORAGE_KEY, BASE_COUNT.toString());
+                localStorage.setItem(LAST_UPDATE_KEY, now.toString());
+            }
+            
+            // Counting animation from base to current count
+            const targetCount = currentCount;
+            const startCount = parseInt(counterEl.textContent);
+            const duration = 2000; // 2 seconds
+            const steps = 50;
+            const increment = (targetCount - startCount) / steps;
+            let step = 0;
+            
+            const timer = setInterval(() => {
+                step++;
+                const displayCount = Math.floor(startCount + (increment * step));
+                counterEl.textContent = displayCount;
+                
+                if (step >= steps) {
+                    clearInterval(timer);
+                    counterEl.textContent = targetCount;
+                }
+            }, duration / steps);
+        }
+        
+        // Run animations when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            roleSwitcher();
+            waitlistCounter();
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
