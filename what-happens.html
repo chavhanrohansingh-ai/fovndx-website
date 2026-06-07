@@ -66,47 +66,272 @@
     <!-- Content -->
     <section class="page-content">
         <div class="container">
-            <div class="content-wrapper">
-                <div class="step-item">
-                    <div class="step-number">01</div>
-                    <h2 class="step-title">The Execution Feed</h2>
-                    <p class="step-desc">Share progress, not noise. Post your startup ideas, live commits, Figma updates, and revenue milestones. Connect with founders, builders, and investors through actual proof of work—just like a professional network, but strictly for execution.</p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">02</div>
-                    <h2 class="step-title">2-Tier Idea Protection</h2>
-                    <p class="step-desc">Zero idea theft. Share the teaser publicly to attract talent and capital, while your core IP, financial models, and deep tech details stay locked until you grant access.</p>
-                    <div class="protection-grid">
-                        <div class="protection-item">
-                            <div class="protection-label">Public Mode</div>
-                            <div class="protection-desc">Share the teaser of your idea on the feed to attract talent and capital.</div>
-                        </div>
-                        <div class="protection-item">
-                            <div class="protection-label">Protected Mode (The Vault)</div>
-                            <div class="protection-desc">When an investor or developer wants deep access, they must sign a 1-Click Digital NDA.</div>
-                        </div>
+            <style>
+                :root {
+                    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
+                    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+                    --color-background-primary: #000000;
+                    --color-background-secondary: #050505;
+                    --color-border-primary: rgba(148, 163, 184, 0.2);
+                    --color-border-secondary: rgba(148, 163, 184, 0.1);
+                    --color-text-primary: #f9fafb;
+                    --color-text-secondary: #9ca3af;
+                    --color-text-tertiary: #6b7280;
+                    --color-text-success: #00c97a;
+                    --color-text-warning: #f97316;
+                    --color-text-danger: #dc2626;
+                    --border-radius-md: 8px;
+                    --border-radius-lg: 16px;
+                }
+                
+                .terminal-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 24px;
+                    padding: 24px 0;
+                }
+                
+                .terminal-box {
+                    background: var(--color-background-primary);
+                    border: 0.5px solid var(--color-border-secondary);
+                    border-radius: var(--border-radius-lg);
+                    overflow: hidden;
+                }
+                
+                .t-bar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0.55rem 1rem;
+                    border-bottom: 0.5px solid var(--color-border-secondary);
+                    background: var(--color-background-secondary);
+                }
+                
+                .t-dots {
+                    display: flex;
+                    gap: 5px;
+                }
+                
+                .t-dot {
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                }
+                
+                .d-r { background: #ff5f57; }
+                .d-y { background: #febc2e; }
+                .d-g { background: #28c840; }
+                
+                .t-title {
+                    font-family: var(--font-mono);
+                    font-size: 10px;
+                    color: var(--color-text-tertiary);
+                    letter-spacing: 0.06em;
+                }
+                
+                .t-body {
+                    padding: 1.5rem;
+                    font-family: var(--font-mono);
+                    font-size: 13px;
+                    line-height: 1.8;
+                    min-height: 200px;
+                    position: relative;
+                }
+                
+                .t-line {
+                    color: var(--color-text-secondary);
+                    display: block;
+                    opacity: 0;
+                    transform: translateY(4px);
+                    transition: opacity 0.25s ease, transform 0.25s ease;
+                    margin-bottom: 4px;
+                }
+                
+                .t-line.show {
+                    opacity: 1;
+                    transform: none;
+                }
+                
+                .t-cmd { color: var(--color-text-primary); font-weight: 500; }
+                .t-success { color: var(--color-text-success); font-weight: 500; }
+                .t-warning { color: var(--color-text-warning); font-weight: 500; }
+                .t-muted { color: var(--color-text-tertiary); }
+                .t-label { color: var(--color-text-secondary); }
+                .t-val { color: var(--color-text-primary); }
+                .t-check { color: var(--color-text-success); }
+                .t-cross { color: var(--color-text-danger); }
+                
+                .t-footer {
+                    padding: 0.55rem 1rem;
+                    border-top: 0.5px solid var(--color-border-secondary);
+                    background: var(--color-background-secondary);
+                    font-family: var(--font-mono);
+                    font-size: 10px;
+                    color: var(--color-text-tertiary);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                
+                .status-dot {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: var(--color-text-success);
+                    animation: blink 1.5s infinite;
+                }
+                
+                @keyframes blink {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.3; }
+                }
+                
+                @media (max-width: 768px) {
+                    .t-body {
+                        padding: 1rem;
+                        font-size: 11px;
+                    }
+                }
+            </style>
+            
+            <div class="terminal-wrapper">
+                <!-- Terminal 1: Execution Feed -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ EXECUTION-FEED</div>
+                        <div></div>
                     </div>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">03</div>
-                    <h2 class="step-title">The Grit Score</h2>
-                    <p class="step-desc">Our proprietary AI-driven metric analyzes your actual execution velocity on the platform and assigns you a Grit Score—cutting through the noise and focusing purely on what matters: shipping.</p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">04</div>
-                    <h2 class="step-title">Unlock The Ecosystem</h2>
-                    <p class="step-desc">High Grit Scores automatically route you to tier-1 investors, elite talent, and 1-click micro-funding. We connect you directly with the people and resources you need to grow—no middlemen, no fluff.</p>
-                </div>
-
-                <div class="bottom-line-box">
-                    <div class="bottom-line-text">
-                        <span class="bottom-line-label">Bottom line:</span> You ship code and share progress. We handle the trust, talent, and capital.
+                    <div class="t-body" id="feedTerminal">
+                        <span class="t-line" id="feed-0"><span class="t-cmd">$ fovndx start --feed</span></span>
+                        <span class="t-line" id="feed-1">&nbsp;</span>
+                        <span class="t-line" id="feed-2"><span class="t-muted">→</span> Initializing execution feed...</span>
+                        <span class="t-line" id="feed-3">&nbsp;</span>
+                        <span class="t-line" id="feed-4"><span class="t-check">✓</span> Startup idea posted: <span class="t-val">AI Invoice Generator</span></span>
+                        <span class="t-line" id="feed-5"><span class="t-check">✓</span> GitHub commit synced: <span class="t-val">+247 lines of code</span></span>
+                        <span class="t-line" id="feed-6"><span class="t-check">✓</span> Figma update: <span class="t-val">Dashboard v2.0</span></span>
+                        <span class="t-line" id="feed-7"><span class="t-check">✓</span> Milestone achieved: <span class="t-val">MVP launched</span></span>
+                        <span class="t-line" id="feed-8">&nbsp;</span>
+                        <span class="t-line" id="feed-9"><span class="t-muted">→</span> <span class="t-val">Founders, builders, investors</span> connect through proof of work</span>
+                        <span class="t-line" id="feed-10"><span class="t-muted">→</span> No noise, just execution</span>
+                        <span class="t-line" id="feed-11">&nbsp;</span>
+                        <span class="t-line" id="feed-12"><span class="t-success">✓ FEED READY</span></span>
                     </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="feedStatus">EXECUTION LOGS LIVE</span></div>
+                </div>
+
+                <!-- Terminal 2: Idea Protection -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ IDEA-VAULT</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="vaultTerminal">
+                        <span class="t-line" id="vault-0"><span class="t-cmd">$ fovndx protect --idea</span></span>
+                        <span class="t-line" id="vault-1">&nbsp;</span>
+                        <span class="t-line" id="vault-2"><span class="t-muted">→</span> 2-tier protection activated</span>
+                        <span class="t-line" id="vault-3">&nbsp;</span>
+                        <span class="t-line" id="vault-4"><span class="t-check">✓</span> <span class="t-warning">PUBLIC MODE:</span> Teaser visible to attract talent & capital</span>
+                        <span class="t-line" id="vault-5"><span class="t-check">✓</span> <span class="t-success">PROTECTED MODE:</span> Core IP locked in The Vault</span>
+                        <span class="t-line" id="vault-6">&nbsp;</span>
+                        <span class="t-line" id="vault-7"><span class="t-muted">→</span> Investor requests deep access...</span>
+                        <span class="t-line" id="vault-8"><span class="t-muted">→</span> <span class="t-val">1-CLICK DIGITAL NDA</span> required</span>
+                        <span class="t-line" id="vault-9"><span class="t-muted">→</span> NDA signed, access granted</span>
+                        <span class="t-line" id="vault-10">&nbsp;</span>
+                        <span class="t-line" id="vault-11"><span class="t-success">✓ IDEA PROTECTED. ZERO THEFT.</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="vaultStatus">VAULT SECURED</span></div>
+                </div>
+
+                <!-- Terminal 3: Grit Score -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ GRIT-SCORE</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="gritTerminal">
+                        <span class="t-line" id="grit-0"><span class="t-cmd">$ fovndx score --grit</span></span>
+                        <span class="t-line" id="grit-1">&nbsp;</span>
+                        <span class="t-line" id="grit-2"><span class="t-muted">→</span> Analyzing execution velocity...</span>
+                        <span class="t-line" id="grit-3">&nbsp;</span>
+                        <span class="t-line" id="grit-4"><span class="t-check">✓</span> Commits/week: <span class="t-val">47</span></span>
+                        <span class="t-line" id="grit-5"><span class="t-check">✓</span> Milestones achieved: <span class="t-val">12</span></span>
+                        <span class="t-line" id="grit-6"><span class="t-check">✓</span> Revenue growth: <span class="t-val">+47%</span></span>
+                        <span class="t-line" id="grit-7">&nbsp;</span>
+                        <span class="t-line" id="grit-8"><span class="t-muted">→</span> Calculating Grit Score...</span>
+                        <span class="t-line" id="grit-9">&nbsp;</span>
+                        <span class="t-line" id="grit-10"><span class="t-success">✓ GRIT SCORE: 87</span></span>
+                        <span class="t-line" id="grit-11"><span class="t-muted">→</span> <span class="t-val">Tier-1 investors unlocked</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="gritStatus">AI ANALYZING</span></div>
+                </div>
+
+                <!-- Terminal 4: Ecosystem Unlock -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ ECOSYSTEM</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="ecoTerminal">
+                        <span class="t-line" id="eco-0"><span class="t-cmd">$ fovndx unlock --ecosystem</span></span>
+                        <span class="t-line" id="eco-1">&nbsp;</span>
+                        <span class="t-line" id="eco-2"><span class="t-muted">→</span> High Grit Score detected</span>
+                        <span class="t-line" id="eco-3">&nbsp;</span>
+                        <span class="t-line" id="eco-4"><span class="t-check">✓</span> <span class="t-val">Tier-1 investors</span>: 17 connected</span>
+                        <span class="t-line" id="eco-5"><span class="t-check">✓</span> <span class="t-val">Elite builders</span>: 53 matched</span>
+                        <span class="t-line" id="eco-6"><span class="t-check">✓</span> <span class="t-val">1-click micro-funding</span>: Available</span>
+                        <span class="t-line" id="eco-7">&nbsp;</span>
+                        <span class="t-line" id="eco-8"><span class="t-muted">→</span> Direct connections, no middlemen</span>
+                        <span class="t-line" id="eco-9"><span class="t-muted">→</span> No fluff, just opportunities</span>
+                        <span class="t-line" id="eco-10">&nbsp;</span>
+                        <span class="t-line" id="eco-11"><span class="t-success">✓ ECOSYSTEM UNLOCKED</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="ecoStatus">OPPORTUNITIES LIVE</span></div>
+                </div>
+
+                <!-- Terminal 5: Bottom Line -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ BOTTOM-LINE</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="bottomTerminal">
+                        <span class="t-line" id="bottom-0"><span class="t-cmd">$ fovndx summary</span></span>
+                        <span class="t-line" id="bottom-1">&nbsp;</span>
+                        <span class="t-line" id="bottom-2"><span class="t-val">YOU:</span> Ship code, share progress</span>
+                        <span class="t-line" id="bottom-3"><span class="t-val">WE:</span> Handle trust, talent, and capital</span>
+                        <span class="t-line" id="bottom-4">&nbsp;</span>
+                        <span class="t-line" id="bottom-5"><span class="t-muted">→</span> That's the Execution Protocol</span>
+                        <span class="t-line" id="bottom-6">&nbsp;</span>
+                        <span class="t-line" id="bottom-7"><span class="t-success">✓ READY TO BUILD</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="bottomStatus">EXECUTION PROTOCOL ACTIVE</span></div>
                 </div>
             </div>
+
+            <script>
+                function animateTerminal(elementId, lineCount, delay = 100) {
+                    for (let i = 0; i < lineCount; i++) {
+                        setTimeout(() => {
+                            const el = document.getElementById(`${elementId}-${i}`);
+                            if (el) el.classList.add('show');
+                        }, i * delay);
+                    }
+                }
+
+                // Animate all terminals on load
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(() => animateTerminal('feed', 13, 120), 300);
+                    setTimeout(() => animateTerminal('vault', 12, 120), 1800);
+                    setTimeout(() => animateTerminal('grit', 12, 120), 3300);
+                    setTimeout(() => animateTerminal('eco', 12, 120), 4800);
+                    setTimeout(() => animateTerminal('bottom', 8, 120), 6300);
+                });
+            </script>
         </div>
     </section>
 
