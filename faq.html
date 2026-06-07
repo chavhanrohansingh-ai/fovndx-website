@@ -66,27 +66,278 @@
     <!-- Content -->
     <section class="page-content">
         <div class="container">
-            <div class="content-wrapper">
-                <div class="faq-item">
-                    <h3 class="faq-question">Is fovndX a social network like LinkedIn?</h3>
-                    <p class="faq-answer">No. While fovndX has a feed to share ideas and progress, it is strictly an "Execution Feed". You can't post vanity metrics or fluff. Every post is tied to actual proof of work, making it an operating system for building, not just talking.</p>
+            <style>
+                :root {
+                    --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
+                    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+                    --color-background-primary: #000000;
+                    --color-background-secondary: #050505;
+                    --color-border-primary: rgba(148, 163, 184, 0.2);
+                    --color-border-secondary: rgba(148, 163, 184, 0.1);
+                    --color-text-primary: #f9fafb;
+                    --color-text-secondary: #9ca3af;
+                    --color-text-tertiary: #6b7280;
+                    --color-text-success: #00c97a;
+                    --border-radius-md: 8px;
+                    --border-radius-lg: 16px;
+                }
+                
+                .terminal-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 24px;
+                    padding: 24px 0;
+                }
+                
+                .terminal-box {
+                    background: var(--color-background-primary);
+                    border: 0.5px solid var(--color-border-secondary);
+                    border-radius: var(--border-radius-lg);
+                    overflow: hidden;
+                }
+                
+                .t-bar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0.55rem 1rem;
+                    border-bottom: 0.5px solid var(--color-border-secondary);
+                    background: var(--color-background-secondary);
+                }
+                
+                .t-dots {
+                    display: flex;
+                    gap: 5px;
+                }
+                
+                .t-dot {
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                }
+                
+                .d-r { background: #ff5f57; }
+                .d-y { background: #febc2e; }
+                .d-g { background: #28c840; }
+                
+                .t-title {
+                    font-family: var(--font-mono);
+                    font-size: 10px;
+                    color: var(--color-text-tertiary);
+                    letter-spacing: 0.06em;
+                }
+                
+                .t-body {
+                    padding: 1.5rem;
+                    font-family: var(--font-mono);
+                    font-size: 13px;
+                    line-height: 1.8;
+                    min-height: 150px;
+                    position: relative;
+                }
+                
+                .t-line {
+                    color: var(--color-text-secondary);
+                    display: block;
+                    opacity: 0;
+                    transform: translateY(4px);
+                    transition: opacity 0.25s ease, transform 0.25s ease;
+                    margin-bottom: 6px;
+                }
+                
+                .t-line.show {
+                    opacity: 1;
+                    transform: none;
+                }
+                
+                .t-cmd { color: var(--color-text-primary); font-weight: 500; }
+                .t-success { color: var(--color-text-success); font-weight: 500; }
+                .t-muted { color: var(--color-text-tertiary); }
+                .t-label { color: var(--color-text-secondary); font-weight: 500; }
+                .t-val { color: var(--color-text-primary); }
+                .t-answer { color: var(--color-text-secondary); }
+                .t-check { color: var(--color-text-success); }
+                
+                .t-footer {
+                    padding: 0.55rem 1rem;
+                    border-top: 0.5px solid var(--color-border-secondary);
+                    background: var(--color-background-secondary);
+                    font-family: var(--font-mono);
+                    font-size: 10px;
+                    color: var(--color-text-tertiary);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                
+                .status-dot {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: var(--color-text-success);
+                    animation: blink 1.5s infinite;
+                }
+                
+                @keyframes blink {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.3; }
+                }
+                
+                @media (max-width: 768px) {
+                    .t-body {
+                        padding: 1rem;
+                        font-size: 11px;
+                    }
+                }
+            </style>
+            
+            <div class="terminal-wrapper">
+                <!-- FAQ 1-4: Original Questions -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ FAQ-01-04</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="faq1Terminal">
+                        <span class="t-line" id="faq1-0"><span class="t-cmd">$ fovndx faq 1-4</span></span>
+                        <span class="t-line" id="faq1-1">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq1-2"><span class="t-label">[1] Is fovndX a social network like LinkedIn?</span></span>
+                        <span class="t-line" id="faq1-3"><span class="t-answer">    → No. While fovndX has an "Execution Feed", it is strictly proof-of-work driven.</span></span>
+                        <span class="t-line" id="faq1-4"><span class="t-answer">    → No vanity metrics, no fluff. Every post is tied to actual execution evidence.</span></span>
+                        <span class="t-line" id="faq1-5">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq1-6"><span class="t-label">[2] How does fovndX protect my startup idea?</span></span>
+                        <span class="t-line" id="faq1-7"><span class="t-answer">    → 2-Tier Protection System: Public teaser + Vault-protected core IP.</span></span>
+                        <span class="t-line" id="faq1-8"><span class="t-answer">    → 1-Click Digital NDA required for deep access.</span></span>
+                        <span class="t-line" id="faq1-9">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq1-10"><span class="t-label">[3] Is fovndX an incubator or VC fund?</span></span>
+                        <span class="t-line" id="faq1-11"><span class="t-answer">    → Neither. We're the underlying tech infrastructure.</span></span>
+                        <span class="t-line" id="faq1-12"><span class="t-answer">    → Direct connections, no middlemen.</span></span>
+                        <span class="t-line" id="faq1-13">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq1-14"><span class="t-label">[4] What is the "Grit Score"?</span></span>
+                        <span class="t-line" id="faq1-15"><span class="t-answer">    → AI-driven metric analyzing real execution (commits, updates, metrics).</span></span>
+                        <span class="t-line" id="faq1-16"><span class="t-answer">    → High Grit Score = guaranteed visibility to top investors.</span></span>
+                        <span class="t-line" id="faq1-17">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq1-18"><span class="t-success">✓ FAQ 1-4 LOADED</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="faq1Status">FAQ ACTIVE</span></div>
                 </div>
 
-                <div class="faq-item">
-                    <h3 class="faq-question">How does fovndX protect my startup idea when I share it?</h3>
-                    <p class="faq-answer">We use a 2-Tier Protection System. You share the surface-level vision publicly to build hype. But your core IP, deep-tech details, and financials are locked in "The Vault". Anyone requesting access must sign an automated, 1-Click Digital NDA before you approve them.</p>
+                <!-- FAQ 5-6 -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ FAQ-05-06</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="faq2Terminal">
+                        <span class="t-line" id="faq2-0"><span class="t-cmd">$ fovndx faq 5-6</span></span>
+                        <span class="t-line" id="faq2-1">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq2-2"><span class="t-label">[5] What if I am a non-technical founder?</span></span>
+                        <span class="t-line" id="faq2-3"><span class="t-label">    → How is my Grit Score calculated?</span></span>
+                        <span class="t-line" id="faq2-4"><span class="t-answer">    → Fully balanced for all verticals: Business, Marketing, Sales.</span></span>
+                        <span class="t-line" id="faq2-5"><span class="t-answer">    → Measures: customer interviews, market research milestones, UA velocity.</span></span>
+                        <span class="t-line" id="faq2-6"><span class="t-answer">    → Immutable revenue proofs, no code required.</span></span>
+                        <span class="t-line" id="faq2-7">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq2-8"><span class="t-label">[6] What exactly is the "Execution Graph"?</span></span>
+                        <span class="t-line" id="faq2-9"><span class="t-answer">    → Living, chronological, tamper-proof visual map of a startup's complete journey.</span></span>
+                        <span class="t-line" id="faq2-10"><span class="t-answer">    → Built automatically from GitHub commits, Figma iterations, witnessed milestones.</span></span>
+                        <span class="t-line" id="faq2-11"><span class="t-answer">    → Every node permanently timestamped, evidence-backed.</span></span>
+                        <span class="t-line" id="faq2-12"><span class="t-answer">    → Real execution impossible to fake.</span></span>
+                        <span class="t-line" id="faq2-13">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq2-14"><span class="t-success">✓ FAQ 5-6 LOADED</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="faq2Status">FAQ ACTIVE</span></div>
                 </div>
 
-                <div class="faq-item">
-                    <h3 class="faq-question">Is fovndX an incubator or a VC fund?</h3>
-                    <p class="faq-answer">Neither. fovndX is the underlying tech infrastructure. We provide the secure platform where founders, builders, and capital interact directly, without the middlemen.</p>
+                <!-- FAQ 7-8 -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ FAQ-07-08</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="faq3Terminal">
+                        <span class="t-line" id="faq3-0"><span class="t-cmd">$ fovndx faq 7-8</span></span>
+                        <span class="t-line" id="faq3-1">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq3-2"><span class="t-label">[7] What is the "Witness System" on fovndX?</span></span>
+                        <span class="t-line" id="faq3-3"><span class="t-answer">    → Human validation layer to automated data.</span></span>
+                        <span class="t-line" id="faq3-4"><span class="t-answer">    → Trusted ecosystem operators (mentors, peers, investors) witness milestones.</span></span>
+                        <span class="t-line" id="faq3-5"><span class="t-answer">    → Witnessed milestone carries 3x more weight in Grit Score.</span></span>
+                        <span class="t-line" id="faq3-6"><span class="t-answer">    → Accelerates investor due diligence by 10x.</span></span>
+                        <span class="t-line" id="faq3-7">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq3-8"><span class="t-label">[8] Can investors pool capital or equity-crowdfund?</span></span>
+                        <span class="t-line" id="faq3-9"><span class="t-answer">    → Initial phase: connection, discoverability, due diligence infrastructure only.</span></span>
+                        <span class="t-line" id="faq3-10"><span class="t-answer">    → Curated deal flows strictly.</span></span>
+                        <span class="t-line" id="faq3-11"><span class="t-answer">    → Full equity crowdfunding deferred until regulatory clearance.</span></span>
+                        <span class="t-line" id="faq3-12"><span class="t-answer">    → SEBI Category I AIF compliance integration required.</span></span>
+                        <span class="t-line" id="faq3-13">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq3-14"><span class="t-success">✓ FAQ 7-8 LOADED</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="faq3Status">FAQ ACTIVE</span></div>
                 </div>
 
-                <div class="faq-item">
-                    <h3 class="faq-question">What is the "Grit Score"?</h3>
-                    <p class="faq-answer">It is our proprietary AI-driven metric. It analyzes a startup's or builder's actual progress (commits, design updates, live metrics) rather than their social media followers. A high Grit Score guarantees visibility to top investors.</p>
+                <!-- FAQ 9-10 -->
+                <div class="terminal-box">
+                    <div class="t-bar">
+                        <div class="t-dots"><div class="t-dot d-r"></div><div class="t-dot d-y"></div><div class="t-dot d-g"></div></div>
+                        <div class="t-title">FOVNDX ~ FAQ-09-10</div>
+                        <div></div>
+                    </div>
+                    <div class="t-body" id="faq4Terminal">
+                        <span class="t-line" id="faq4-0"><span class="t-cmd">$ fovndx faq 9-10</span></span>
+                        <span class="t-line" id="faq4-1">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq4-2"><span class="t-label">[9] How does the "Gig & Opportunity Marketplace" function?</span></span>
+                        <span class="t-line" id="faq4-3"><span class="t-answer">    → Startups post core tasks/founding roles needing targeted expertise.</span></span>
+                        <span class="t-line" id="faq4-4"><span class="t-answer">    → Freelancers/students apply with verified Grit Scores + Portable Reputation.</span></span>
+                        <span class="t-line" id="faq4-5"><span class="t-answer">    → Transactions secured via integrated escrow infrastructure.</span></span>
+                        <span class="t-line" id="faq4-6"><span class="t-answer">    → Payments released systematically as milestones cleared/verified.</span></span>
+                        <span class="t-line" id="faq4-7">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq4-8"><span class="t-label">[10] Is fovndX free? How does it sustain?</span></span>
+                        <span class="t-line" id="faq4-9"><span class="t-answer">    → Basic profile, ecosystem feed, core discovery = FREE.</span></span>
+                        <span class="t-line" id="faq4-10"><span class="t-answer">    → Multi-tier monetization: SaaS subscriptions for serious builders/funders.</span></span>
+                        <span class="t-line" id="faq4-11"><span class="t-answer">    → Secondary: data intelligence reports, marketplace commissions.</span></span>
+                        <span class="t-line" id="faq4-12"><span class="t-answer">    → Institutional partnership contracts for curated deal flows.</span></span>
+                        <span class="t-line" id="faq4-13">&nbsp;</span>
+                        
+                        <span class="t-line" id="faq4-14"><span class="t-success">✓ FAQ 9-10 LOADED</span></span>
+                        <span class="t-line" id="faq4-15"><span class="t-success">✓ ALL FAQs READY</span></span>
+                    </div>
+                    <div class="t-footer"><div class="status-dot"></div><span id="faq4Status">FAQ COMPLETE</span></div>
                 </div>
             </div>
+
+            <script>
+                function animateTerminal(elementId, lineCount, delay = 100) {
+                    for (let i = 0; i < lineCount; i++) {
+                        setTimeout(() => {
+                            const el = document.getElementById(`${elementId}-${i}`);
+                            if (el) el.classList.add('show');
+                        }, i * delay);
+                    }
+                }
+
+                // Animate all terminals on load
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(() => animateTerminal('faq1', 19, 100), 300);
+                    setTimeout(() => animateTerminal('faq2', 15, 100), 2200);
+                    setTimeout(() => animateTerminal('faq3', 15, 100), 4000);
+                    setTimeout(() => animateTerminal('faq4', 16, 100), 5800);
+                });
+            </script>
         </div>
     </section>
 
