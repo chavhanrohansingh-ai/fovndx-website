@@ -99,7 +99,7 @@
                         <span class="hero-pill">COMING SOON • INDIA'S FIRST STARTUP OPERATING SYSTEM</span>
                     </div>
                     <h1 class="hero-main-heading">
-                        The world remembers <span id="roleSwitcher" style="color: #3b82f6; font-weight: 800; display: inline-block; min-width: 100px; vertical-align: top;">builders</span> who can <span style="color: #00c97a;">prove</span> they built.
+                        The world rewards<br><span style="display: inline-block; width: 180px; vertical-align: baseline; text-align: left;"><span id="roleSwitcher" style="color: #3b82f6; font-weight: 800; display: inline; white-space: nowrap; transition: color 0.3s ease, text-shadow 0.3s ease; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);">builders</span></span><br>who can <span style="color: #00c97a;">prove</span> they built.
                         <br>
                         <span style="color: #ffffff;">fovndX</span> — The world's first <span style="color: #00c97a;">verified</span> execution record.
                     </h1>
@@ -110,11 +110,11 @@
                     <div class="hero-features">
                         <div class="hero-feature">
                             <span class="checkmark">✓</span>
-                            <span>Execution Feed — No thought leadership. No motivational posts. Only what you shipped, what you learned, what you proved — today.</span>
+                            <span>"Your work, finally visible. Every build. Every milestone. Every proof — in real time."</span>
                         </div>
                         <div class="hero-feature">
                             <span class="checkmark">✓</span>
-                            <span>AI Matching Engine — Finds the co-founder whose skills complete yours. The investor whose thesis fits your stage. The builder your startup actually needs.</span>
+                            <span>"The right people find you. Not because you pitched — because you proved."</span>
                         </div>
                     </div>
                 </div>
@@ -1071,6 +1071,7 @@
         function roleSwitcher() {
             const roles = ['builders', 'founders'];
             const colors = ['#3b82f6', '#f97316'];
+            const glows = ['0 0 12px rgba(59, 130, 246, 0.7)', '0 0 12px rgba(249, 115, 22, 0.7)'];
             let currentRoleIndex = 0;
             let isDeleting = false;
             let charIndex = 0;
@@ -1081,8 +1082,10 @@
             function animate() {
                 const currentRole = roles[currentRoleIndex];
                 const currentColor = colors[currentRoleIndex];
+                const currentGlow = glows[currentRoleIndex];
                 
                 el.style.color = currentColor;
+                el.style.textShadow = currentGlow;
                 
                 if (isDeleting) {
                     charIndex--;
@@ -1092,10 +1095,10 @@
                     el.textContent = currentRole.substring(0, charIndex);
                 }
                 
-                let typeSpeed = isDeleting ? 100 : 150; // Slower typing
+                let typeSpeed = isDeleting ? 60 : 100; // Faster, smoother
                 
                 if (!isDeleting && charIndex === currentRole.length) {
-                    typeSpeed = 2500; // Longer pause at end
+                    typeSpeed = 2000; // Pause at end
                     isDeleting = true;
                 } else if (isDeleting && charIndex === 0) {
                     isDeleting = false;
